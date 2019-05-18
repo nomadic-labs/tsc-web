@@ -1,0 +1,16 @@
+{
+  "sections": [
+    {
+      "content": [
+        {
+          "type": "header",
+          "content": { "text": "Header placeholder" }
+        },
+        {
+          "type": "paragraph",
+          "content": { "text": "Paragraph placeholder" }
+        }
+      ]
+    }
+  ]
+}
