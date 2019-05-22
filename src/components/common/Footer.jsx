@@ -1,55 +1,82 @@
 import React from "react";
 import Container from "./Container";
 import { Link } from "gatsby";
+import logo from "../../assets/images/tsc-logo.svg"
 
 export default (props) => {
   return (
-    <footer className="footer-area footer1 bg-light pt-75">
-      <Container>
-        <div className="row">
-          <div className="col-xl-6 col-lg-6 col-md-6">
-              <div className="footer-wrapper mb-30">
-                  <div className="footer-title">
-                    <h4>Links</h4>
-                  </div>
-                  <ul className="footer-menu">
-                      <li><Link to="/">Home</Link></li>
-                      <li><Link to="/about">About</Link></li>
-                      <li><Link to="/news">News</Link></li>
-                      <li><Link to="/resources">Resources</Link></li>
-                      <li><Link to="/get-involved">Get Involved</Link></li>
-                      <li><Link to="/contact">Contact Us</Link></li>
-                  </ul>
-              </div>
-          </div>
-
-          <div className="col-xl-6 col-lg-6 col-md-6">
-              <div className="footer-wrapper mb-30">
-                  <div className="footer-title">
-                      <h4>Newsletter</h4>
-                  </div>
-                  <div className="footer-content">
-                      <p>Subscribe for news and updates</p>
-                  </div>
-                  <div className="subscribes-form">
-                      <form action="#">
-                          <input placeholder="Enter your email" type="email" />
-                          <button className="btn">Subscribe</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
+    <footer>
+        <div className="footer-area pt-60 pb-40 bg-primary-light">
+            <div className="container">
+                <div className="row">
+                    <div className="col-xl-3 col-lg-3 col-md-6">
+                        <div className="footer-wrapper mb-30">
+                            <div className="footer-logo">
+                                <Link to="/"><img src={logo} alt="Trinity Square Cafe" className="img-fluid" /></Link>
+                            </div>
+                            <div className="footer-text">
+                                <p>We help people recovering from serious mental illness live full lives by building key skills in a respectful, supportive community.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-xl-3 col-lg-3 col-md-6">
+                        <div className="footer-wrapper pl-40 mb-30">
+                            <div className="footer-title">
+                                <h4>Cafe Hours</h4>
+                            </div>
+                            <ul className="fotter-menu">
+                                <li>Monday: 11:00am - 2:30pm</li>
+                                <li>Tuesday: 11:00am - 2:30pm</li>
+                                <li>Wednesday: 11:00am - 2:30pm</li>
+                                <li>Thursday: 11:00am - 2:30pm</li>
+                                <li>Friday: 11:00am - 2:30pm</li>
+                                <li>Saturday: Closed</li>
+                                <li>Sunday: Closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-xl-3 col-lg-3 col-md-6">
+                        <div className="footer-wrapper pl-35 mb-30">
+                            <div className="footer-title">
+                                <h4>Contact Info</h4>
+                            </div>
+                            <ul className="fotter-link">
+                                <li>
+                                    <h5><i className="far fa-paper-plane"></i> Location</h5>
+                                    <p>19 Trinity Square, Toronto, ON</p>
+                                </li>
+                                <li>
+                                    <h5><i className="far fa-envelope-open"></i> Email us</h5>
+                                    <p>hello@trinitysquarecafe.ca</p>
+                                </li>
+                                <li>
+                                    <h5><i className="fas fa-headphones"></i> Call Us</h5>
+                                    <p>(416) 598-2010</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-xl-3 col-lg-3 col-md-6">
+                        <div className="footer-wrapper pl-35 mb-30">
+                            <div className="footer-title">
+                                <h4>Support Us</h4>
+                            </div>
+                            <ul className="fotter-link">
+                                <li>
+                                    <a href=""><i className="fab fa-paypal"></i> Make a donation</a>
+                                </li>
+                                <li>
+                                    <a href=""><i className="fab fa-instagram"></i> Follow us on Instagram</a>
+                                </li>
+                                <li>
+                                    <a href=""><i className="fab fa-yelp"></i> Leave us a review</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="footer-border mt-30 pt-20 pb-25">
-          <div className="row">
-              <div className="col-xl-12 text-center">
-                  <div className="copyright">
-                      <p>Copyright <i className="far fa-copyright"></i> 2019 <a href="https://technoscienceunit.org/">TRU.</a> All Rights Reserved</p>
-                  </div>
-              </div>
-          </div>
-        </div>
-      </Container>
     </footer>
   );
 };

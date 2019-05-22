@@ -69,6 +69,31 @@ export const page = (state={}, action) => {
         ...state,
         data: action.data
       }
+    case 'UPDATE_PAGE_CONTENT':
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          content: {
+            ...state.data.content,
+            [action.location]: {
+              ...state.data.content[action.location],
+              ...action.content
+            }
+          }
+        }
+      }
+    case 'SET_PAGE_CONTENT':
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          content: {
+            ...state.data.content,
+            [action.location]: action.content
+          }
+        }
+      }
     case 'UPDATE_PAGE_DATA':
       return {
         ...state,
@@ -149,9 +174,6 @@ export const page = (state={}, action) => {
       newSection.content.push(emptyContentItem);
       newSectionArr = [...state.data.content.sections]
       newSectionArr.splice(action.sectionIndex, 1, newSection)
-
-      console.log("action.sectionIndex", action.sectionIndex)
-      console.log("state.data.content.sections", state.data.content.sections)
 
       return {
         ...state,

@@ -37,6 +37,91 @@ export function showNotificationByName(name) {
 
 // PAGE EDITING ------------------------
 
+export function updatePageContent(location, content) {
+  return (dispatch, getState) => {
+    const db = firebase.database();
+    const pageId = getState().page.data.id;
+
+    console.log('content to update', content)
+
+    db.ref(`pages/${pageId}/content/${location}/`).update(content, error => {
+      if (error) {
+        return dispatch(
+          showNotification(
+            `There was an error saving your changes: ${error}`,
+            "success"
+          )
+        );
+      }
+
+      dispatch(updatePageContentState(location, content));
+      dispatch(
+        showNotification(
+          "Your changes have been saved. Publish your changes to make them public.",
+          "success"
+        )
+      );
+    });
+  };
+}
+
+export function pushContentItem(location, content) {
+  return (dispatch, getState) => {
+    const db = firebase.database();
+    const pageId = getState().page.data.id;
+    const newKey = db.ref(`pages/${pageId}/content/${location}/`).push().key;
+    const newItem = { [newKey]: content }
+
+    db.ref(`pages/${pageId}/content/${location}/`).update(newItem, error => {
+      if (error) {
+        return dispatch(
+          showNotification(
+            `There was an error saving your changes: ${error}`,
+            "success"
+          )
+        );
+      }
+
+      dispatch(updatePageContentState(location, newItem));
+      dispatch(
+        showNotification(
+          "Your changes have been saved. Publish your changes to make them public.",
+          "success"
+        )
+      );
+    })
+  };
+}
+
+export function removeContentItem(location, itemId) {
+  return (dispatch, getState) => {
+    const db = firebase.database();
+    const state = getState();
+    const pageId = state.page.data.id;
+
+    db.ref(`pages/${pageId}/content/${location}/`).update({[itemId]: null}, error => {
+      if (error) {
+        return dispatch(
+          showNotification(
+            `There was an error saving your changes: ${error}`,
+            "success"
+          )
+        );
+      }
+
+      const newContent = { ...state.page.data.content[location] }
+      delete newContent[itemId]
+
+      dispatch(setPageContentState(location, newContent));
+      dispatch(
+        showNotification(
+          "Your changes have been saved. Publish your changes to make them public.",
+          "success"
+        )
+      );
+    })
+  };
+}
 
 export function updateSectionContent(sectionIndex, contentIndex, newContent) {
   return {
@@ -165,8 +250,6 @@ export function updateHeaderImage(content) {
     const db = firebase.database();
     const pageId = getState().page.data.id;
 
-    console.log("header image", content)
-
     db.ref(`pages/${pageId}/`).update({ "header-image": content }, error => {
       if (error) {
         return dispatch(
@@ -270,6 +353,10 @@ export function deploy() {
 
 export function loadPageData(data) {
   return { type: "LOAD_PAGE_DATA", data };
+}
+
+export function updatePageContentState(location, content) {
+  return { type: "UPDATE_PAGE_CONTENT", location, content };
 }
 
 export function updatePageData(contentId, content) {

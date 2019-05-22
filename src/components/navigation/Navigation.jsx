@@ -25,8 +25,8 @@ class Navigation extends React.Component {
                         <div className="main-menu">
                             <nav id="mobile-menu">
                                 <ul className="text-left">
-                                    <li><a href="/">About Us</a></li>
-                                    <li><a href="/">Our Model</a></li>
+                                    <li><Link to="/about">About Us</Link></li>
+                                    <li><Link to="/program">Program & Referrals</Link></li>
                                 </ul>
                             </nav>
                         </div>
@@ -42,8 +42,8 @@ class Navigation extends React.Component {
                         <div className="main-menu">
                             <nav id="mobile-menu">
                                 <ul className="text-right">
-                                    <li><a href="/">Cafe</a></li>
-                                    <li><a href="/">Location & Hours</a></li>
+                                    <li><Link to="/cafe">Cafe</Link></li>
+                                    <li><Link to="/cafe">Location & Hours</Link></li>
                                 </ul>
                             </nav>
                         </div>

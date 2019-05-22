@@ -2817,13 +2817,13 @@ ul.cat li a:hover {
 .footer-area {
 	background-size: cover;
 	background-position: center center;
+	background-color: $light-gray;
 }
 .footer-logo {
 	margin-bottom: 30px;
 }
 .footer-text p {
 	margin-bottom: 0;
-	color: #385871;
 }
 .footer-icon {
 	margin-top: 22px;
@@ -4115,7 +4115,7 @@ ul.cat li a:hover {
 }
 .review-form button{}
 
-/*Callouts*/
+/* Callouts */
 
 .callout-bg {
 	margin-right: 0;
@@ -4133,3 +4133,31 @@ ul.cat li a:hover {
 }
 
 
+/* Carousel */
+
+.carousel {
+	.slick-prev:before, .slick-next:before {
+		color: $theme-highlight;
+	}
+}
+
+.lead-text {
+	p {
+		font-weight: 700;
+		font-size: 1.75em;
+	}
+}
+
+.rounded-circle {
+  overflow: hidden;
+}
+
+.background-circle {
+  position: absolute;
+  height: 50vw;
+  width: 50vw;
+  border-radius: 50%;
+  background-color: $light-gray;
+  top: 20%;
+  left: 25%;
+}

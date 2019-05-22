@@ -77,12 +77,12 @@ class DefaultLayout extends React.Component {
       <div style={styles.container}>
         <Helmet>
           <title>
-            The Land and the Refinery
+            Trinity Square Cafe
           </title>
           <meta
             charSet="utf-8"
-            description="Simple and flexible CMS for static sites"
-            keywords="static site, CMS, React, Gatsby"
+            description="Trinity Square Cafe"
+            keywords="Trinity Square, cafe, mental illness, mental health, recovery, volunteer"
             viewport="width=device-width,initial-scale=1.0,maximum-scale=1"
           />
           <link rel="icon" href={favicon} type="image/x-icon" />
