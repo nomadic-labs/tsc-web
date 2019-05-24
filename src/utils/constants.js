@@ -25,6 +25,9 @@ export const DEFAULT_COMPONENT_CONTENT = {
   "partner-logos": {
     "partner-image": { "imageSrc": "https://www.nomadiclabs.ca/img/logo-03.png", "caption": "" },
   },
+  "cafe-photos": {
+    "cafe-image": { "imageSrc": "https://www.nomadiclabs.ca/img/logo-03.png", "caption": "" },
+  },
   "board-members": {
     "board-member-image": { "imageSrc": "https://www.nomadiclabs.ca/img/logo-03.png", "caption": "" },
     "board-member-name": { "text": "Name" },

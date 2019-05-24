@@ -373,20 +373,5 @@ function mainSlider() {
 		google.maps.event.addDomListener(window, 'load', basicmap);
 	}
 
-	// meanmenu
-
-	window.setTimeout(function() {
-
-		$('#mobile-menu').meanmenu({
-			meanMenuContainer: '.mobile-menu',
-			meanScreenWidth: "992"
-		});
-
-		mainSlider();
-
-	}, 500)
-
-
-
 
 });

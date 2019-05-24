@@ -28,6 +28,7 @@ import Container from "../components/common/Container";
 import Carousel from "../components/common/Carousel";
 import Testimonial from "../components/common/Testimonial";
 import PartnerLogo from "../components/common/PartnerLogo";
+import CafePhoto from "../components/common/CafePhoto";
 import Affix from "../components/common/Affix";
 import EmbeddedIframe from "../components/common/EmbeddedIframe";
 import PageHeader from "../components/common/PageHeader";
@@ -113,36 +114,68 @@ class HomePage extends React.Component {
 
           <Section className="wow fadeIn pt-80 pb-80 pos-relative">
             <Container>
-              <div className="row">
-                <div className="col-xl-5 col-lg-6">
-                  <div className="mb-30 wow fadeIn">
-                    <EditableImageUpload
-                      content={content["intro-image"]}
-                      onSave={this.onSave("intro-image")}
-                      uploadImage={uploadImage}
-                    />
-                  </div>
-                </div>
-                <div className="col-xl-7 col-lg-6">
+              <div className="row justify-content-center">
+                <div className="col-xl-7 col-lg-7">
                   <div className="mb-30">
-                    <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["intro-title"]} handleSave={this.onSave("intro-title")} />
-                      </h2>
-                    </div>
-                    <div className="mb-30">
-                      <EditableParagraph content={content["intro-description"]} handleSave={this.onSave("intro-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["intro-more-btn"]} handleSave={this.onSave("intro-more-btn")} />
-                    </div>
+                    <EditableParagraph content={content["intro-description"]} handleSave={this.onSave("intro-description")} />
+                    <EditableLink classes={"btn btn-primary mt-20"} content={content["intro-more-btn"]} handleSave={this.onSave("intro-more-btn")} />
                   </div>
                 </div>
               </div>
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
+
+          <Section className="wow pt-80 pb-80 fadeIn bg-lighter">
             <Container>
               <div className="row">
+                <div className="col-xl-7 col-lg-7">
+                  <div className="section-title">
+                    <h2 className="mb-20">
+                      <EditableText content={content["how-we-work-title"]} handleSave={this.onSave("how-we-work-title")} />
+                    </h2>
+                  </div>
+                  <div className="callout-text mb-20">
+                    <EditableText content={content["how-we-work-callout"]} handleSave={this.onSave("how-we-work-callout")} />
+                  </div>
+                  <div className="mb-30">
+                    <EditableParagraph content={content["how-we-work-description"]} handleSave={this.onSave("how-we-work-description")} />
+                    <EditableLink classes={"btn btn-primary mt-20"} content={content["how-we-work-more-btn"]} handleSave={this.onSave("how-we-work-more-btn")} />
+                  </div>
+                </div>
+                <div className="col-xl-5 col-lg-5 pos-relative">
+                  <div className="wow fadeIn">
+                    <EditableImageUpload
+                      content={content["how-we-work-image"]}
+                      onSave={this.onSave("how-we-work-image")}
+                      uploadImage={uploadImage}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </Section>
+
+          <Section className="wow fadeIn pt-80 pb-80">
+            <Container>
+              <div className="row">
+
+                <div className="col-xl-5 col-lg-6">
+                  <div className="mb-30 wow fadeIn">
+                    <Carousel
+                      classes="cafe-photos"
+                      collection={content["cafe-photos"]}
+                      SlideComponent={CafePhoto}
+                      onSave={this.onSave('cafe-photos')}
+                      onAddItem={this.onAddItem('cafe-photos')}
+                      onDeleteItem={this.onDeleteItem('cafe-photos')}
+                      options={{ slidesToShow: 1, dots: true, infinite: true, adaptiveHeight: true }}
+                      isEditingPage={this.props.isEditingPage}
+                      defaultContent={DEFAULT_COMPONENT_CONTENT['cafe-photos']}
+                    />
+                  </div>
+                </div>
+
                 <div className="col-xl-7 col-lg-6">
                   <div className="mb-30">
                     <div className="section-title mb-65">
@@ -154,50 +187,10 @@ class HomePage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-5 col-lg-6">
-                  <div className="mb-30 wow fadeIn">
-                    <EditableImageUpload
-                      content={content["team-image"]}
-                      onSave={this.onSave("team-image")}
-                      uploadImage={uploadImage}
-                    />
-                  </div>
-                </div>
+
               </div>
             </Container>
 
-          </Section>
-
-          <Section className="wow pt-80 pb-80 fadeIn pos-relative">
-            <Container>
-              <div className="row">
-                <div className="col-xl-5 col-lg-5">
-                  <div className="mb-30">
-                    <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["how-we-work-title"]} handleSave={this.onSave("how-we-work-title")} />
-                      </h2>
-                    </div>
-                    <div className="mb-30">
-                      <EditableParagraph content={content["how-we-work-description"]} handleSave={this.onSave("how-we-work-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["how-we-work-more-btn"]} handleSave={this.onSave("how-we-work-more-btn")} />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-7 col-lg-7 pos-relative">
-                  <div className="mb-30 callout-bg wow fadeIn">
-                    <EditableImageUpload
-                      content={content["how-we-work-image"]}
-                      onSave={this.onSave("how-we-work-image")}
-                      uploadImage={uploadImage}
-                    />
-                  </div>
-                  <div className="callout p-4 bg-secondary text-white wow fadeIn">
-                    <EditableText content={content["how-we-work-callout"]} handleSave={this.onSave("how-we-work-callout")} />
-                  </div>
-                </div>
-              </div>
-            </Container>
           </Section>
 
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter pos-relative">

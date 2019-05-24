@@ -28,6 +28,7 @@ import Container from "../components/common/Container";
 import Carousel from "../components/common/Carousel";
 import Testimonial from "../components/common/Testimonial";
 import PartnerLogo from "../components/common/PartnerLogo";
+import CafePhoto from "../components/common/CafePhoto";
 import Affix from "../components/common/Affix";
 import EmbeddedIframe from "../components/common/EmbeddedIframe";
 import PageHeader from "../components/common/PageHeader";
@@ -111,39 +112,75 @@ class ProgramPage extends React.Component {
             onUpdateTitle={this.onUpdateTitle}
           />
 
-          <Section className="wow pt-80 pb-80 fadeIn pos-relative">
+          <Section className="wow fadeIn pt-80">
             <Container>
-              <div className="section-title">
-                <h2 className="mb-20">
-                  <EditableText content={content["program-intro-title"]} handleSave={this.onSave("program-intro-title")} />
-                </h2>
-              </div>
-              <div className="row">
-                <div className="col-xl-7 col-lg-7">
-                  <div className="mb-30">
-                    <div className="mb-30">
-                      <EditableParagraph content={content["program-intro-description"]} handleSave={this.onSave("program-intro-description")} />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-5 col-lg-5">
-                  <div className="pos-relative">
-
-                    <div className="mb-30 callout-bg wow fadeIn">
-                      <EditableImageUpload
-                        content={content["program-intro-image"]}
-                        onSave={this.onSave("program-intro-image")}
-                        uploadImage={uploadImage}
-                      />
-                    </div>
-                    <div className="callout p-4 bg-secondary text-white wow fadeIn">
-                      <EditableText content={content["program-intro-callout"]} handleSave={this.onSave("program-intro-callout")} />
-                    </div>
-                  </div>
+              <div className="row justify-content-center">
+                <div className="col-lg-7 col-xl-7">
+                  <EditableParagraph content={content["program-intro-description"]} handleSave={this.onSave("program-intro-description")} />
                 </div>
               </div>
             </Container>
           </Section>
+
+          <Section className="wow fadeIn pt-40 pb-80 pos-relative">
+            <div className="background-circle d-none d-lg-block" />
+            <Container>
+
+              <div className="row align-items-center">
+                <div className="col-lg-6 col-xl-5">
+                  <div className="mb-30">
+                    <EditableImageUpload
+                      classes="rounded-circle"
+                      content={content["mission-image"]}
+                      onSave={this.onSave("mission-image")}
+                      uploadImage={uploadImage}
+                      styles={{ image: { height: "100%" }}}
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-xl-7">
+                  <div className="mb-30">
+                    <div className="section-title">
+                      <span className="mb-20 label">
+                        <EditableText content={content["mission-headline"]} handleSave={this.onSave("mission-headline")} />
+                      </span>
+                    </div>
+                    <div className="mb-30 lead-text">
+                      <EditableParagraph content={content["mission-description"]} handleSave={this.onSave("mission-description")} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row align-items-center">
+                <div className="col-lg-6 col-xl-7">
+                  <div className="mb-30">
+                    <div className="section-title">
+                      <span className="mb-20 label">
+                        <EditableText content={content["vision-headline"]} handleSave={this.onSave("vision-headline")} />
+                      </span>
+                    </div>
+                    <div className="mb-30 lead-text">
+                      <EditableParagraph content={content["vision-description"]} handleSave={this.onSave("vision-description")} />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-6 col-xl-5">
+                  <div className="mb-30">
+                    <EditableImageUpload
+                      classes="rounded-circle"
+                      content={content["vision-image"]}
+                      onSave={this.onSave("vision-image")}
+                      uploadImage={uploadImage}
+                      styles={{ image: { height: "100%" }}}
+                    />
+                  </div>
+                </div>
+              </div>
+
+            </Container>
+          </Section>
+
 
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
@@ -204,6 +241,43 @@ class ProgramPage extends React.Component {
                   </div>
 
                 </div>
+              </div>
+            </Container>
+
+          </Section>
+
+          <Section className="wow fadeIn pt-80 pb-80">
+            <Container>
+              <div className="row">
+
+                <div className="col-xl-5 col-lg-6">
+                  <div className="mb-30 wow fadeIn">
+                    <Carousel
+                      classes="cafe-photos"
+                      collection={content["cafe-photos"]}
+                      SlideComponent={CafePhoto}
+                      onSave={this.onSave('cafe-photos')}
+                      onAddItem={this.onAddItem('cafe-photos')}
+                      onDeleteItem={this.onDeleteItem('cafe-photos')}
+                      options={{ slidesToShow: 1, dots: true, infinite: true, adaptiveHeight: true }}
+                      isEditingPage={this.props.isEditingPage}
+                      defaultContent={DEFAULT_COMPONENT_CONTENT['cafe-photos']}
+                    />
+                  </div>
+                </div>
+
+                <div className="col-xl-7 col-lg-6">
+                  <div className="mb-30">
+                    <div className="section-title mb-65">
+                      <h2 className="mb-20">
+                        <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
+                      </h2>
+                      <EditableParagraph content={content["team-description"]} handleSave={this.onSave("team-description")} />
+                      <EditableLink classes={"btn btn-primary mt-20"} content={content["team-more-btn"]} handleSave={this.onSave("team-more-btn")} />
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </Container>
 

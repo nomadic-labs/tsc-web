@@ -7,7 +7,7 @@ const defaultHeader = "https://firebasestorage.googleapis.com/v0/b/tru-web.appsp
 const RecipePageHeader = ({ onSave, content, title, headerImage, onUpdateTitle, onUpdateHeaderImage }) => {
   return (
     <EditableBackgroundImage
-      classes="breadcrumb-area d-flex pt-260 pb-180 align-items-center"
+      classes="breadcrumb-area d-flex pt-180 pb-80 align-items-center"
       onSave={ onUpdateHeaderImage }
       uploadImage={ uploadImage }
       content={ headerImage || { imageSrc: defaultHeader} }

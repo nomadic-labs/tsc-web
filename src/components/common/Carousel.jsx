@@ -7,31 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const DEFAULT_SLIDES_TO_SHOW = 3;
-const MAX_MOBILE_VIEWPORT_WIDTH = 992;
-const isClient = typeof window !== 'undefined';
 
 class EditableCarousel extends React.Component {
-  state = {
-    viewportWidth: 0,
-  };
-
-  componentDidMount() {
-    if (isClient) {
-      window.addEventListener('resize', this.updateWindowDimensions);
-      setTimeout(() => {
-        this.updateWindowDimensions();
-      }, 250);
-    }
-  }
-
-  componentWillUnmount() {
-    if (isClient) window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions = () => {
-    this.setState({ viewportWidth: window.innerWidth });
-  }
-
   onSaveItem = itemId => item => {
     const newCollection = {
       ...this.props.collection,
@@ -51,18 +28,25 @@ class EditableCarousel extends React.Component {
 
 
   render() {
-    const { viewportWidth } = this.state;
-    const isMobile = Boolean(viewportWidth <= MAX_MOBILE_VIEWPORT_WIDTH)
-    const { collection, SlideComponent, isEditingPage, options } = this.props;
+    const { collection, SlideComponent, isEditingPage, options, classes } = this.props;
 
-    const slidesToShow = isMobile ? 1 : options.slidesToShow || DEFAULT_SLIDES_TO_SHOW;
-
-    const carouselOptions = {
+    const defaultOptions = {
       infinite: false,
-      slidesToShow: slidesToShow,
+      slidesToShow: DEFAULT_SLIDES_TO_SHOW,
       slidesToScroll: options.slidesToShow || 1,
       draggable: !isEditingPage,
       swipe: !isEditingPage,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        }
+      ]
     }
 
     const collectionKeys = Object.keys(collection);
@@ -71,8 +55,10 @@ class EditableCarousel extends React.Component {
       return <p>Coming soon!</p>
     }
 
+    const carouselOptions = { ...defaultOptions, ...options };
+
     return (
-      <div className="carousel">
+      <div className={`carousel ml-20 mr-20 ${classes ? classes : ""}`}>
         <Slider { ...carouselOptions }>
           {collectionKeys.map(key => {
             const content = collection[key];

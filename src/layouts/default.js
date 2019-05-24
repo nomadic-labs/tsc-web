@@ -19,10 +19,10 @@ import "../assets/css/bootstrap.min.css";
 import "../assets/css/fontawesome-all.min.css";
 import "../assets/css/default.css";
 import "../assets/css/meanmenu.css";
-import "../assets/css/responsive.css";
 import "../assets/css/slick.css";
 import "../assets/sass/style.scss";
 import "../assets/sass/less-cms/base.scss";
+import "../assets/css/responsive.css";
 
 import favicon from '../assets/images/icon.png'
 

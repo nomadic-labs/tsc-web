@@ -7,25 +7,26 @@ import {
 
 import { uploadImage } from "../../firebase/operations"
 
-const PartnerLogo = props => {
+const CafePhoto = props => {
 
   const content = props.content || {};
 
   const handleSave = newContent => {
-    props.onSave({ "partner-image": newContent })
+    props.onSave({ "cafe-image": newContent })
   }
 
   return (
-    <div className="partner-logo m-4">
+    <div className="cafe-image">
       <EditableImageUpload
-        content={content["partner-image"]}
+        content={content["cafe-image"]}
         onSave={handleSave}
         onDelete={props.onDelete}
         uploadImage={uploadImage}
         classes="img-fluid"
+        styles={{ container: { height: "100%" }, image: { height: "100%", objectFit: "cover" }}}
       />
     </div>
   );
 };
 
-export default PartnerLogo;
+export default CafePhoto;

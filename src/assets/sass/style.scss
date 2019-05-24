@@ -153,17 +153,17 @@ label {
 	font-weight: 400;
 }
 *::-moz-selection {
-	background: $theme-highlight;
+	background: $light-green;
 	/*color: #fff;*/
 	text-shadow: none;
 }
 ::-moz-selection {
-	background: $theme-highlight;
+	background: $light-green;
 	/*color: #fff;*/
 	text-shadow: none;
 }
 ::selection {
-	background: $theme-highlight;
+	background: $light-green;
 	/*color: #fff;*/
 	text-shadow: none;
 }
@@ -1596,10 +1596,10 @@ label {
 }
 .testimonial-icon i {
 	font-size: 22px;
-	color: $theme-highlight;
+	color: $theme-secondary;
 	height: 80px;
 	width: 80px;
-	border: 2px solid $theme-highlight;
+	border: 2px solid $theme-secondary;
 	border-radius: 50%;
 	text-align: center;
 	line-height: 80px;
@@ -1622,7 +1622,7 @@ label {
 }
 .testimonial-text span {
 	font-size: 16px;
-	color: $theme-highlight;
+	color: $theme-secondary;
 	font-weight: 400;
 }
 .testimonial-img {
@@ -2819,6 +2819,7 @@ ul.cat li a:hover {
 	background-size: cover;
 	background-position: center center;
 	background-color: $light-gray;
+	border-top: 1px solid $white;
 }
 .footer-logo {
 	margin-bottom: 30px;
@@ -2858,7 +2859,7 @@ ul.cat li a:hover {
 .footer-title h4::before {
 	height: 3px;
 	width: 50px;
-	background: $theme-secondary;
+	background: $theme-primary;
 	content: "";
 	position: absolute;
 	left: 0;
@@ -3009,7 +3010,7 @@ ul.cat li a:hover {
 	line-height: 28px;
 	font-size: 14px;
 	font-weight: 600;
-	font-family: 'Poppins', sans-serif;
+	font-family: $header-font;
 	margin-bottom: 2px;
 }
 .footer-info h5 a{
@@ -3022,6 +3023,14 @@ ul.cat li a:hover {
 .footer-info span {
 	font-size: 14px;
 	color: $black;
+}
+
+footer .footer-area {
+	i {
+		color: $theme-primary;
+		margin-right: 8px;
+		font-size: 18px;
+	}
 }
 
 .subscribes-form  form {}
@@ -4144,10 +4153,19 @@ ul.cat li a:hover {
   font-size: 1.5em;
 }
 
+.callout-text {
+	font-size: 1.5em;
+	font-weight: 700;
+	color: $theme-secondary;
+}
+
 
 /* Carousel */
 
 .carousel {
+	padding-left: 15px;
+	padding-right: 15px;
+
 	.slick-prev:before, .slick-next:before {
 		color: $theme-highlight;
 	}
@@ -4227,4 +4245,50 @@ ul.cat li a:hover {
 	}
 }
 
+/* Cafe slideshow */
 
+
+.carousel.cafe-photos {
+	.cafe-image {
+		height: 400px;
+	}
+}
+
+.carousel {
+	.partner-logo {
+		height: 150px;
+    display: flex;
+    align-items: center;
+	}
+}
+
+.rounded-circle {
+    background: $theme-primary;
+    border-radius: 50%;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+
+	img {
+		bottom: 0;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.carousel.cafe-photos {
+		.cafe-image {
+			height: 250px;
+		}
+	}
+
+}

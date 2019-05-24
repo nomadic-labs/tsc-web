@@ -18,12 +18,12 @@ class Navigation extends React.Component {
   render() {
     return (
       <header>
-        <div id="sticky-header" className="header-transparent">
+        <div id="sticky-header" className="header-transparent d-none d-lg-block">
             <div className="container">
                 <div className="row justify-content-space-between">
                     <div className="col-xl-5 col-lg-5">
                         <div className="main-menu">
-                            <nav id="mobile-menu">
+                            <nav>
                                 <ul className="text-left">
                                     <li><Link to="/about">About Us</Link></li>
                                     <li><Link to="/program">Program & Referrals</Link></li>
@@ -40,20 +40,34 @@ class Navigation extends React.Component {
                     </div>
                     <div className="col-xl-5 col-lg-5">
                         <div className="main-menu">
-                            <nav id="mobile-menu">
+                            <nav>
                                 <ul className="text-right">
                                     <li><Link to="/cafe">Cafe</Link></li>
-                                    <li><Link to="#location-hours">Location & Hours</Link></li>
+                                    <li><Link to="/cafe/#location-hours">Location & Hours</Link></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <div className="col-12">
-                        <div className="mobile-menu"></div>
-                    </div>
                 </div>
             </div>
         </div>
+
+        <nav className="navbar navbar-expand-lg navbar-dark d-flex d-lg-none" id="sticky-header">
+        <Link to="/" className="navbar-brand">
+          <img src={logo} alt="Trinity Square Cafe" style={{ maxHeight: "40px" }} />
+        </Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <Link className="nav-item nav-link" to="/about">About Us</Link>
+              <Link className="nav-item nav-link" to="/program">Program & Referrals</Link>
+              <Link className="nav-item nav-link" to="/cafe">Cafe</Link>
+              <Link className="nav-item nav-link" to="/cafe/#location-hours">Location & Hours</Link>
+            </div>
+          </div>
+        </nav>
       </header>
     );
   }

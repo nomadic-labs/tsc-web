@@ -128,14 +128,14 @@ class CafePage extends React.Component {
               <div className="row">
                 <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
                         content={content["menu-item1-image"]}
                         onSave={this.onSave("menu-item1-image")}
                         uploadImage={uploadImage}
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6">
                       <h4>
                         <EditableText content={content["menu-item1-title"]} handleSave={this.onSave("menu-item1-title")} />
                       </h4>
@@ -150,14 +150,14 @@ class CafePage extends React.Component {
 
                 <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
                         content={content["menu-item2-image"]}
                         onSave={this.onSave("menu-item2-image")}
                         uploadImage={uploadImage}
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6">
                       <h4>
                         <EditableText content={content["menu-item2-title"]} handleSave={this.onSave("menu-item2-title")} />
                       </h4>
@@ -172,14 +172,14 @@ class CafePage extends React.Component {
 
                 <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
                         content={content["menu-item3-image"]}
                         onSave={this.onSave("menu-item3-image")}
                         uploadImage={uploadImage}
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6">
                       <h4>
                         <EditableText content={content["menu-item3-title"]} handleSave={this.onSave("menu-item3-title")} />
                       </h4>
@@ -194,14 +194,14 @@ class CafePage extends React.Component {
 
                 <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
                         content={content["menu-item4-image"]}
                         onSave={this.onSave("menu-item4-image")}
                         uploadImage={uploadImage}
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-sm-6">
                       <h4>
                         <EditableText content={content["menu-item4-title"]} handleSave={this.onSave("menu-item4-title")} />
                       </h4>
@@ -228,7 +228,7 @@ class CafePage extends React.Component {
                       <EditableText content={content["recipes-title"]} handleSave={this.onSave("recipes-title")} />
                     </h2>
                   </div>
-                  { recipePages.map(recipe => <RecipeSummary key={recipe.node.id} recipe={recipe.node} />)}
+                  { recipePages.slice(0,3).map(recipe => <RecipeSummary key={recipe.node.id} recipe={recipe.node} />)}
                 </div>
 
                 <div className="col-12 col-md-4">
@@ -281,7 +281,16 @@ export const query = graphql`
         imageSrc
       }
     }
-    allPages(filter: {template: { in: ["recipe-page.js"]}}) {
+    allPages(
+      filter: {
+        template: {
+          in: ["recipe-page.js"]
+        }
+      }
+      sort: {
+        fields: [id]
+        order: DESC
+      }) {
       edges {
         node {
           id
