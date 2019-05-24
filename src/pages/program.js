@@ -64,7 +64,7 @@ const mapStateToProps = state => {
   };
 };
 
-class HomePage extends React.Component {
+class ProgramPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -111,28 +111,33 @@ class HomePage extends React.Component {
             onUpdateTitle={this.onUpdateTitle}
           />
 
-          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
+          <Section className="wow pt-80 pb-80 fadeIn pos-relative">
             <Container>
+              <div className="section-title">
+                <h2 className="mb-20">
+                  <EditableText content={content["program-intro-title"]} handleSave={this.onSave("program-intro-title")} />
+                </h2>
+              </div>
               <div className="row">
-                <div className="col-xl-5 col-lg-6">
-                  <div className="bounce-animate mb-30">
-                    <EditableImageUpload
-                      content={content["intro-image"]}
-                      onSave={this.onSave("intro-image")}
-                      uploadImage={uploadImage}
-                    />
+                <div className="col-xl-7 col-lg-7">
+                  <div className="mb-30">
+                    <div className="mb-30">
+                      <EditableParagraph content={content["program-intro-description"]} handleSave={this.onSave("program-intro-description")} />
+                    </div>
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-6">
-                  <div className="mb-30">
-                    <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["intro-title"]} handleSave={this.onSave("intro-title")} />
-                      </h2>
+                <div className="col-xl-5 col-lg-5">
+                  <div className="pos-relative">
+
+                    <div className="mb-30 callout-bg wow fadeIn">
+                      <EditableImageUpload
+                        content={content["program-intro-image"]}
+                        onSave={this.onSave("program-intro-image")}
+                        uploadImage={uploadImage}
+                      />
                     </div>
-                    <div className="mb-30">
-                      <EditableParagraph content={content["intro-description"]} handleSave={this.onSave("intro-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["intro-more-btn"]} handleSave={this.onSave("intro-more-btn")} />
+                    <div className="callout p-4 bg-secondary text-white wow fadeIn">
+                      <EditableText content={content["program-intro-callout"]} handleSave={this.onSave("program-intro-callout")} />
                     </div>
                   </div>
                 </div>
@@ -143,153 +148,78 @@ class HomePage extends React.Component {
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
               <div className="row">
-                <div className="col-xl-5 col-lg-5">
-                  <div className="team-content mb-30">
-                    <div className="section-title mb-65">
-                      <h2 className="mb-20">
-                        <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
-                      </h2>
-                      <EditableParagraph content={content["team-description"]} handleSave={this.onSave("team-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["team-more-btn"]} handleSave={this.onSave("team-more-btn")} />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-7 col-lg-7">
-                    <div className="row">
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-1"]}
-                                      onSave={this.onSave("team-image-1")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-2"]}
-                                      onSave={this.onSave("team-image-2")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-3"]}
-                                      onSave={this.onSave("team-image-3")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-4"]}
-                                      onSave={this.onSave("team-image-4")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </Container>
-
-          </Section>
-
-          <Section className="wow pt-80 pb-80 fadeIn pos-relative">
-            <Container>
-              <div className="row">
-                <div className="col-xl-5 col-lg-5">
-                  <div className="mb-30">
+                <div className="col-12">
+                  <div className="mb-40">
                     <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["how-we-work-title"]} handleSave={this.onSave("how-we-work-title")} />
+                      <h2 className="mb-20 text-center">
+                        <EditableText content={content["referrals-title"]} handleSave={this.onSave("referrals-title")} />
                       </h2>
                     </div>
-                    <div className="mb-30">
-                      <EditableParagraph content={content["how-we-work-description"]} handleSave={this.onSave("how-we-work-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["how-we-work-more-btn"]} handleSave={this.onSave("how-we-work-more-btn")} />
+                    <div className="mb-30 text-center">
+                      <EditableParagraph content={content["referrals-description"]} handleSave={this.onSave("referrals-description")} />
                     </div>
-                  </div>
-                </div>
-                <div className="col-xl-7 col-lg-7 pos-relative">
-                  <div className="mb-30 callout-bg">
-                    <EditableImageUpload
-                      content={content["how-we-work-image"]}
-                      onSave={this.onSave("how-we-work-image")}
-                      uploadImage={uploadImage}
-                    />
-                  </div>
-                  <div className="callout p-4 bg-secondary text-white">
-                    <EditableText content={content["how-we-work-callout"]} handleSave={this.onSave("how-we-work-callout")} />
                   </div>
                 </div>
               </div>
+
+              <div className="row">
+                <div className="col-12 col-md-4">
+
+                  <div className="pricing-wrapper mb-50">
+                    <div className="our-services-text">
+                      <h4 className="mb-20">
+                        <span className="icon-bg"><i className="fas fa-check"></i></span>
+                        <EditableText content={content["referral-step1-header"]} handleSave={this.onSave("referral-step1-header")} />
+                      </h4>
+                      <EditableParagraph content={content["referral-step1-description"]} handleSave={this.onSave("referral-step1-description")} />
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="col-12 col-md-4">
+
+                  <div className="pricing-wrapper mb-50">
+                    <div className="our-services-text">
+                      <h4 className="mb-20">
+                        <span className="icon-bg"><i className="fas fa-check"></i></span>
+                        <EditableText content={content["referral-step2-header"]} handleSave={this.onSave("referral-step2-header")} />
+                      </h4>
+                      <EditableParagraph content={content["referral-step2-description"]} handleSave={this.onSave("referral-step2-description")} />
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="col-12 col-md-4">
+
+                  <div className="pricing-wrapper mb-50">
+                    <div className="our-services-text">
+                      <h4 className="mb-20">
+                        <span className="icon-bg"><i className="fas fa-check"></i></span>
+                        <EditableText content={content["referral-step3-header"]} handleSave={this.onSave("referral-step3-header")} />
+                      </h4>
+                      <EditableParagraph content={content["referral-3-description"]} handleSave={this.onSave("referral-3-description")} />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </Container>
+
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 bg-lighter pos-relative">
-            <Container>
-              <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
-                <EditableText content={content["testimonials-title"]} handleSave={this.onSave("testimonials-title")} />
-              </h2>
-              <Carousel
-                collection={content["testimonials"]}
-                SlideComponent={Testimonial}
-                onSave={this.onSave('testimonials')}
-                onAddItem={this.onAddItem('testimonials')}
-                onDeleteItem={this.onDeleteItem('testimonials')}
-                options={{ slidesToShow: 1 }}
-                isEditingPage={this.props.isEditingPage}
-                defaultContent={DEFAULT_COMPONENT_CONTENT['testimonials']}
-              />
-            </Container>
-          </Section>
-
-          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
-            <Container>
-              <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
-                <EditableText content={content["partners-funders-title"]} handleSave={this.onSave("partners-funders-title")} />
-              </h2>
-
-              <Carousel
-                collection={content["partner-logos"]}
-                SlideComponent={PartnerLogo}
-                onSave={this.onSave('partner-logos')}
-                onAddItem={this.onAddItem('partner-logos')}
-                onDeleteItem={this.onDeleteItem('partner-logos')}
-                options={{ slidesToShow: 4 }}
-                isEditingPage={this.props.isEditingPage}
-                defaultContent={DEFAULT_COMPONENT_CONTENT['partner-logos']}
-              />
-            </Container>
-          </Section>
         </main>
       </Layout>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProgramPage);
 
 export const query = graphql`
   query {
-    pages(id: { eq: "home" }) {
+    pages(id: { eq: "program" }) {
       id
       content
       title

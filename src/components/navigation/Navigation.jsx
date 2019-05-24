@@ -33,9 +33,9 @@ class Navigation extends React.Component {
                     </div>
                     <div className="col-xl-2 col-lg-2 d-flex align-items-stretch">
                         <div className="header-logo text-left text-lg-center">
-                            <a href="/">
+                            <Link to="/">
                               <img src={logo} alt="Trinity Square Cafe" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-xl-5 col-lg-5">
@@ -43,7 +43,7 @@ class Navigation extends React.Component {
                             <nav id="mobile-menu">
                                 <ul className="text-right">
                                     <li><Link to="/cafe">Cafe</Link></li>
-                                    <li><Link to="/cafe">Location & Hours</Link></li>
+                                    <li><Link to="#location-hours">Location & Hours</Link></li>
                                 </ul>
                             </nav>
                         </div>

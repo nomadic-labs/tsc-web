@@ -31,6 +31,8 @@ import PartnerLogo from "../components/common/PartnerLogo";
 import Affix from "../components/common/Affix";
 import EmbeddedIframe from "../components/common/EmbeddedIframe";
 import PageHeader from "../components/common/PageHeader";
+import InstagramFeed from "../components/common/InstagramFeed";
+import RecipeSummary from "../components/common/RecipeSummary";
 
 import { DEFAULT_COMPONENT_CONTENT } from "../utils/constants"
 
@@ -64,7 +66,7 @@ const mapStateToProps = state => {
   };
 };
 
-class HomePage extends React.Component {
+class CafePage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -96,6 +98,7 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const recipePages = this.props.data.allPages ? this.props.data.allPages.edges : [];
     const pageData = this.props.pageData ? this.props.pageData : this.props.data.pages;
     const content = this.props.pageData ? this.props.pageData.content : JSON.parse(this.props.data.pages.content);
 
@@ -113,137 +116,135 @@ class HomePage extends React.Component {
 
           <Section className="wow fadeIn pt-80 pb-80 pos-relative">
             <Container>
+              <div className="mb-40">
+                <div className="section-title text-center">
+                  <h2 className="mb-20">
+                    <EditableText content={content["sample-menu-title"]} handleSave={this.onSave("sample-menu-title")} />
+                  </h2>
+                  <EditableParagraph content={content["sample-menu-description"]} handleSave={this.onSave("sample-menu-description")} />
+                </div>
+              </div>
+
               <div className="row">
-                <div className="col-xl-5 col-lg-6">
-                  <div className="bounce-animate mb-30">
-                    <EditableImageUpload
-                      content={content["intro-image"]}
-                      onSave={this.onSave("intro-image")}
-                      uploadImage={uploadImage}
-                    />
+                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                  <div className="row">
+                    <div className="col-6">
+                      <EditableImageUpload
+                        content={content["menu-item1-image"]}
+                        onSave={this.onSave("menu-item1-image")}
+                        uploadImage={uploadImage}
+                      />
+                    </div>
+                    <div className="col-6">
+                      <h4>
+                        <EditableText content={content["menu-item1-title"]} handleSave={this.onSave("menu-item1-title")} />
+                      </h4>
+                      <div className="mt-20 mb-20">
+                        <div className="label"><EditableText content={content["menu-item1-price"]} handleSave={this.onSave("menu-item1-price")} /></div>
+                        <div className="label"><EditableText content={content["menu-item1-price2"]} handleSave={this.onSave("menu-item1-price2")} /></div>
+                      </div>
+                      <EditableParagraph content={content["menu-item1-description"]} handleSave={this.onSave("menu-item1-description")} />
+                    </div>
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-6">
-                  <div className="mb-30">
-                    <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["intro-title"]} handleSave={this.onSave("intro-title")} />
-                      </h2>
+
+                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                  <div className="row">
+                    <div className="col-6">
+                      <EditableImageUpload
+                        content={content["menu-item2-image"]}
+                        onSave={this.onSave("menu-item2-image")}
+                        uploadImage={uploadImage}
+                      />
                     </div>
-                    <div className="mb-30">
-                      <EditableParagraph content={content["intro-description"]} handleSave={this.onSave("intro-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["intro-more-btn"]} handleSave={this.onSave("intro-more-btn")} />
+                    <div className="col-6">
+                      <h4>
+                        <EditableText content={content["menu-item2-title"]} handleSave={this.onSave("menu-item2-title")} />
+                      </h4>
+                      <div className="mt-20 mb-20">
+                        <div className="label"><EditableText content={content["menu-item2-price"]} handleSave={this.onSave("menu-item2-price")} /></div>
+                        <div className="label"><EditableText content={content["menu-item2-price2"]} handleSave={this.onSave("menu-item2-price2")} /></div>
+                      </div>
+                      <EditableParagraph content={content["menu-item2-description"]} handleSave={this.onSave("menu-item2-description")} />
                     </div>
                   </div>
                 </div>
+
+                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                  <div className="row">
+                    <div className="col-6">
+                      <EditableImageUpload
+                        content={content["menu-item3-image"]}
+                        onSave={this.onSave("menu-item3-image")}
+                        uploadImage={uploadImage}
+                      />
+                    </div>
+                    <div className="col-6">
+                      <h4>
+                        <EditableText content={content["menu-item3-title"]} handleSave={this.onSave("menu-item3-title")} />
+                      </h4>
+                      <div className="mt-20 mb-20">
+                        <div className="label"><EditableText content={content["menu-item3-price"]} handleSave={this.onSave("menu-item3-price")} /></div>
+                        <div className="label"><EditableText content={content["menu-item3-price2"]} handleSave={this.onSave("menu-item3-price2")} /></div>
+                      </div>
+                      <EditableParagraph content={content["menu-item3-description"]} handleSave={this.onSave("menu-item3-description")} />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                  <div className="row">
+                    <div className="col-6">
+                      <EditableImageUpload
+                        content={content["menu-item4-image"]}
+                        onSave={this.onSave("menu-item4-image")}
+                        uploadImage={uploadImage}
+                      />
+                    </div>
+                    <div className="col-6">
+                      <h4>
+                        <EditableText content={content["menu-item4-title"]} handleSave={this.onSave("menu-item4-title")} />
+                      </h4>
+                      <div className="mt-20 mb-20">
+                        <div className="label"><EditableText content={content["menu-item4-price"]} handleSave={this.onSave("menu-item4-price")} /></div>
+                        <div className="label"><EditableText content={content["menu-item4-price2"]} handleSave={this.onSave("menu-item4-price2")} /></div>
+                      </div>
+                      <EditableParagraph content={content["menu-item4-description"]} handleSave={this.onSave("menu-item4-description")} />
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </Container>
           </Section>
 
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
-              <div className="row">
-                <div className="col-xl-5 col-lg-5">
-                  <div className="team-content mb-30">
-                    <div className="section-title mb-65">
-                      <h2 className="mb-20">
-                        <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
-                      </h2>
-                      <EditableParagraph content={content["team-description"]} handleSave={this.onSave("team-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["team-more-btn"]} handleSave={this.onSave("team-more-btn")} />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-7 col-lg-7">
-                    <div className="row">
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-1"]}
-                                      onSave={this.onSave("team-image-1")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-2"]}
-                                      onSave={this.onSave("team-image-2")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-3"]}
-                                      onSave={this.onSave("team-image-3")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-4"]}
-                                      onSave={this.onSave("team-image-4")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </Container>
 
-          </Section>
-
-          <Section className="wow pt-80 pb-80 fadeIn pos-relative">
-            <Container>
               <div className="row">
-                <div className="col-xl-5 col-lg-5">
-                  <div className="mb-30">
-                    <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["how-we-work-title"]} handleSave={this.onSave("how-we-work-title")} />
-                      </h2>
-                    </div>
-                    <div className="mb-30">
-                      <EditableParagraph content={content["how-we-work-description"]} handleSave={this.onSave("how-we-work-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["how-we-work-more-btn"]} handleSave={this.onSave("how-we-work-more-btn")} />
-                    </div>
+                <div className="col-12 col-md-8">
+                  <div className="section-title">
+                    <h2 className="mb-20">
+                      <EditableText content={content["recipes-title"]} handleSave={this.onSave("recipes-title")} />
+                    </h2>
                   </div>
+                  { recipePages.map(recipe => <RecipeSummary key={recipe.node.id} recipe={recipe.node} />)}
                 </div>
-                <div className="col-xl-7 col-lg-7 pos-relative">
-                  <div className="mb-30 callout-bg">
-                    <EditableImageUpload
-                      content={content["how-we-work-image"]}
-                      onSave={this.onSave("how-we-work-image")}
-                      uploadImage={uploadImage}
-                    />
+
+                <div className="col-12 col-md-4">
+                  <div className="section-title">
+                    <h2 className="mb-20">
+                      <EditableText content={content["instagram-title"]} handleSave={this.onSave("instagram-title")} />
+                    </h2>
                   </div>
-                  <div className="callout p-4 bg-secondary text-white">
-                    <EditableText content={content["how-we-work-callout"]} handleSave={this.onSave("how-we-work-callout")} />
-                  </div>
+                  <InstagramFeed />
                 </div>
               </div>
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 bg-lighter pos-relative">
+
+          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
             <Container>
               <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
                 <EditableText content={content["testimonials-title"]} handleSave={this.onSave("testimonials-title")} />
@@ -261,41 +262,37 @@ class HomePage extends React.Component {
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
-            <Container>
-              <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
-                <EditableText content={content["partners-funders-title"]} handleSave={this.onSave("partners-funders-title")} />
-              </h2>
-
-              <Carousel
-                collection={content["partner-logos"]}
-                SlideComponent={PartnerLogo}
-                onSave={this.onSave('partner-logos')}
-                onAddItem={this.onAddItem('partner-logos')}
-                onDeleteItem={this.onDeleteItem('partner-logos')}
-                options={{ slidesToShow: 4 }}
-                isEditingPage={this.props.isEditingPage}
-                defaultContent={DEFAULT_COMPONENT_CONTENT['partner-logos']}
-              />
-            </Container>
-          </Section>
         </main>
       </Layout>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(CafePage);
 
 export const query = graphql`
   query {
-    pages(id: { eq: "home" }) {
+    pages(id: { eq: "cafe" }) {
       id
       content
       title
       slug
       header_image {
         imageSrc
+      }
+    }
+    allPages(filter: {template: { in: ["recipe-page.js"]}}) {
+      edges {
+        node {
+          id
+          title
+          slug
+          content
+          order
+          header_image {
+            imageSrc
+          }
+        }
       }
     }
   }

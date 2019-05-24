@@ -359,6 +359,10 @@ export function updatePageContentState(location, content) {
   return { type: "UPDATE_PAGE_CONTENT", location, content };
 }
 
+export function setPageContentState(location, content) {
+  return { type: "SET_PAGE_CONTENT", location, content };
+}
+
 export function updatePageData(contentId, content) {
   console.log("updating", contentId);
   console.log("content", content);

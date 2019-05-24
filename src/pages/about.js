@@ -26,11 +26,13 @@ import Layout from "../layouts/default.js";
 import Section from "../components/common/Section";
 import Container from "../components/common/Container";
 import Carousel from "../components/common/Carousel";
+import Collection from "../components/common/Collection";
 import Testimonial from "../components/common/Testimonial";
 import PartnerLogo from "../components/common/PartnerLogo";
 import Affix from "../components/common/Affix";
 import EmbeddedIframe from "../components/common/EmbeddedIframe";
 import PageHeader from "../components/common/PageHeader";
+import BoardMember from "../components/common/BoardMember";
 
 import { DEFAULT_COMPONENT_CONTENT } from "../utils/constants"
 
@@ -64,7 +66,7 @@ const mapStateToProps = state => {
   };
 };
 
-class HomePage extends React.Component {
+class AboutPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -116,7 +118,7 @@ class HomePage extends React.Component {
             <Container>
 
               <div className="row align-items-center">
-                <div className="col-xl-5 col-lg-6">
+                <div className="col-lg-6 col-xl-5">
                   <div className="mb-30">
                     <EditableImageUpload
                       classes="rounded-circle"
@@ -126,10 +128,10 @@ class HomePage extends React.Component {
                     />
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-6">
+                <div className="col-lg-6 col-xl-7">
                   <div className="mb-30">
                     <div className="section-title">
-                      <span className="mb-20">
+                      <span className="mb-20 label">
                         <EditableText content={content["mission-headline"]} handleSave={this.onSave("mission-headline")} />
                       </span>
                     </div>
@@ -141,10 +143,10 @@ class HomePage extends React.Component {
               </div>
 
               <div className="row align-items-center">
-                <div className="col-xl-6 col-lg-6">
+                <div className="col-lg-6 col-xl-7">
                   <div className="mb-30">
                     <div className="section-title">
-                      <span className="mb-20">
+                      <span className="mb-20 label">
                         <EditableText content={content["vision-headline"]} handleSave={this.onSave("vision-headline")} />
                       </span>
                     </div>
@@ -153,8 +155,8 @@ class HomePage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-5 col-lg-6">
-                  <div className="bounce-animate mb-30">
+                <div className="col-lg-6 col-xl-5">
+                  <div className="mb-30">
                     <EditableImageUpload
                       classes="rounded-circle"
                       content={content["vision-image"]}
@@ -171,7 +173,7 @@ class HomePage extends React.Component {
           <Section className="wow fadeIn pt-80 pb-80 pos-relative bg-lighter">
             <Container>
               <div className="row">
-                <div className="col-xl-5 col-lg-6">
+                <div className="col-12 col-lg-6">
                   <div className="mb-30">
                     <EditableImageUpload
                       content={content["mandate-image"]}
@@ -180,7 +182,7 @@ class HomePage extends React.Component {
                     />
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-6">
+                <div className="col-12 col-lg-6">
                   <div className="mb-30">
                     <div className="section-title">
                       <h2 className="mb-20">
@@ -199,35 +201,35 @@ class HomePage extends React.Component {
 
           <Section className="wow fadeIn pt-80 pb-80">
             <Container>
-              <div className="row">
-                <div className="col-12">
-                  <div className="team-content mb-30">
-                    <div className="section-title mb-65 text-center">
-                      <h2 className="mb-20">
-                        <EditableText content={content["board-of-directors-title"]} handleSave={this.onSave("board-of-directors-title")} />
-                      </h2>
-                      <EditableParagraph content={content["board-of-directors-description"]} handleSave={this.onSave("board-of-directors-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["board-of-directors-more-btn"]} handleSave={this.onSave("board-of-directors-more-btn")} />
-                    </div>
-                  </div>
-                </div>
+              <div className="section-title mb-30 text-center">
+                <h2 className="mb-20">
+                  <EditableText content={content["board-of-directors-title"]} handleSave={this.onSave("board-of-directors-title")} />
+                </h2>
+                <EditableParagraph content={content["board-of-directors-description"]} handleSave={this.onSave("board-of-directors-description")} />
+                <EditableLink classes={"btn btn-primary mt-20"} content={content["board-of-directors-more-btn"]} handleSave={this.onSave("board-of-directors-more-btn")} />
               </div>
+              <Collection
+                items={content["board-members"]}
+                Component={BoardMember}
+                onSave={this.onSave('board-members')}
+                onAddItem={this.onAddItem('board-members')}
+                onDeleteItem={this.onDeleteItem('board-members')}
+                isEditingPage={this.props.isEditingPage}
+                defaultContent={DEFAULT_COMPONENT_CONTENT['board-members']}
+                classes="row"
+              />
             </Container>
           </Section>
 
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
-              <div className="row">
-                <div className="col-12">
-                  <div className="team-content mb-30">
-                    <div className="section-title mb-65 text-center">
-                      <h2 className="mb-20">
-                        <EditableText content={content["history-title"]} handleSave={this.onSave("history-title")} />
-                      </h2>
-                      <EditableParagraph content={content["history-description"]} handleSave={this.onSave("history-description")} />
-                      <EditableEmbeddedIframe classes={"mt-20"} content={content["history-timeline"]} handleSave={this.onSave("history-timeline")} />
-                    </div>
-                  </div>
+              <div className="section-title mb-30 text-center">
+                <h2 className="mb-20">
+                  <EditableText content={content["history-title"]} handleSave={this.onSave("history-title")} />
+                </h2>
+                <EditableParagraph content={content["history-description"]} handleSave={this.onSave("history-description")} />
+                <div className="mt-40">
+                  <EditableEmbeddedIframe content={content["history-timeline"]} handleSave={this.onSave("history-timeline")} />
                 </div>
               </div>
             </Container>
@@ -239,11 +241,11 @@ class HomePage extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(AboutPage);
 
 export const query = graphql`
   query {
-    pages(id: { eq: "home" }) {
+    pages(id: { eq: "about" }) {
       id
       content
       title

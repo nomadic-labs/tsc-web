@@ -5,7 +5,7 @@ import logo from "../../assets/images/tsc-logo.svg"
 
 export default (props) => {
   return (
-    <footer>
+    <footer id="location-hours">
         <div className="footer-area pt-60 pb-40 bg-primary-light">
             <div className="container">
                 <div className="row">

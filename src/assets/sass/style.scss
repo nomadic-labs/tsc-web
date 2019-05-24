@@ -215,10 +215,11 @@ label {
 	letter-spacing: 2px;
 	font-family: 'Rubik', sans-serif;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
 	background: $theme-highlight;
 	color:#fff;
 }
+
 .breadcrumb > .active {
 	color: #888;
 }
@@ -730,7 +731,7 @@ label {
 	line-height: 1.1;
 	margin-bottom: 0;
 }
-.section-title span {
+.section-title span.label {
 	font-size: 18px;
 	color: $theme-highlight;
 	font-weight: 600;
@@ -1608,7 +1609,7 @@ label {
 .testimonial-text p {
 	font-size: 30px;
 	line-height: 1.5;
-	color: #252525;
+	color: $black;
 	font-style: italic;
 	font-weight: 400;
 	padding: 0 100px;
@@ -3165,11 +3166,6 @@ ul.cat li a:hover {
 	margin-right: 30px;
 	margin-top: 29px;
 }
-.our-services-text h4 {
-	font-size: 24px;
-	font-weight: 600;
-	margin-bottom: 10px;
-}
 .our-services-text p {
 	margin-bottom: 0;
 }
@@ -3516,13 +3512,12 @@ ul.cat li a:hover {
 	font-weight: 600;
 	color: $black;
 }
-
 .breadcrumb-text span {
 	font-size: 1.4em;
-	color: $theme-primary;
+	color: $theme-secondary;
 	font-weight: 600;
 	letter-spacing: 2px;
-	font-family: 'Rubik', sans-serif;
+	font-family: $body-font;
 	text-transform: uppercase;
 }
 .breadcrumb-menu {}
@@ -3642,8 +3637,25 @@ ul.cat li a:hover {
 .pricing-area{}
 .pricing-wrapper {
 	background: #fff;
-	padding: 63px 40px 70px 48px;
+	padding: 40px;
 	position: relative;
+
+	.icon-bg {
+		background: $theme-secondary;
+    height: 30px;
+    width: 30px;
+    color: $white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 30px;
+    margin-right: 8px;
+    display: inline-block;
+
+    i.fas {
+    	line-height: 30px;
+    }
+	}
 }
 .pricing-top {
 	position: relative;
@@ -4120,7 +4132,7 @@ ul.cat li a:hover {
 .callout-bg {
 	margin-right: 0;
   margin-left: auto;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   width: 75%;
 }
 
@@ -4156,8 +4168,63 @@ ul.cat li a:hover {
   position: absolute;
   height: 50vw;
   width: 50vw;
+  max-width: 800px;
+  max-height: 800px;
   border-radius: 50%;
   background-color: $light-gray;
   top: 20%;
   left: 25%;
 }
+
+.sample-menu-item-wrapper {
+	.label {
+		color: $theme-secondary;
+		font-family: $header-font;
+		text-transform: uppercase;
+	}
+}
+
+
+/* Recipe page */
+
+.instructions ol li {
+	list-style: unset;
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.ingredients ul li {
+	margin-bottom: 10px;
+}
+
+.recipe-page-header {
+	height: 70vh;
+
+	.breadcrumb-text h1 {
+		margin-bottom: 20px;
+	}
+
+	.title {
+    background-color: white;
+	}
+
+	.subtitle {
+		font-size: 16px;
+	}
+
+	.edit-container {
+		height: inherit;
+	}
+}
+
+@media (max-width: 991px) {
+	.instructions {
+		order: 2;
+	}
+
+	.ingredients {
+		order: 1;
+	}
+}
+
+

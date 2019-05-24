@@ -37,6 +37,7 @@ export default class HTML extends React.Component {
           <script src={ withPrefix("/js/imagesloaded.pkgd.min.js")} type="text/javascript"></script>
           <script src={ withPrefix("/js/jquery.magnific-popup.min.js")} type="text/javascript"></script>
           <script src={ withPrefix("/js/plugins.js")} type="text/javascript"></script>
+          <script src={ withPrefix("/js/embeds.js")} type="text/javascript"></script>
           <script src={ withPrefix("/js/main.js")} type="text/javascript"></script>
         </body>
       </html>

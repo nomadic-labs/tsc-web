@@ -4,6 +4,15 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 
 import { connect } from "react-redux";
+
+import {
+  EditableText,
+  EditableParagraph,
+  EditableBackgroundImage,
+  EditableImageUpload,
+  EditableLink,
+} from "react-easy-editables";
+
 import {
   updatePage,
   loadPageData,
@@ -12,8 +21,11 @@ import {
 } from "../redux/actions";
 
 import Layout from "../layouts/default.js";
-import PageHeader from "../components/common/PageHeader";
+import RecipePageHeader from "../components/common/RecipePageHeader";
 import DynamicSection from "../components/editing/DynamicSection";
+import Container from "../components/common/Container";
+import Section from "../components/common/Section";
+
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -75,7 +87,7 @@ class SingleColumnPage extends React.Component {
           <Helmet>
             <title>{pageData.title}</title>
           </Helmet>
-          <PageHeader
+          <RecipePageHeader
             title={pageData.title}
             onSave={this.onSave}
             content={ content }
@@ -83,18 +95,45 @@ class SingleColumnPage extends React.Component {
             onUpdateHeaderImage={this.onUpdateHeaderImage}
             onUpdateTitle={this.onUpdateTitle}
           />
-          {
-            sections.map((section, index) => {
-              return(
-                <DynamicSection
-                  content={ section.content }
-                  sectionIndex={index}
-                  key={index}
-                  type={ section.type }
-                />
-              )
-            })
-          }
+
+          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
+            <Container>
+              <div className="row">
+                <div className="col-12">
+                  <div className="section-title">
+                    <span className="mb-20 label">
+                      <EditableText content={content["prep-time-headline"]} handleSave={this.onSave("prep-time-headline")} placeholder="Total prep and cooking time: 30 minutes" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-12 col-lg-8 wow fadeIn instructions">
+                  <div className="section-title">
+                    <h2 className="mb-20">Instructions</h2>
+                  </div>
+                  <div className="mb-30">
+                    <EditableParagraph
+                      content={content["instructions-description"]}
+                      handleSave={this.onSave("instructions-description")}
+                    />
+                  </div>
+                </div>
+
+                <div className="col-12 col-lg-4 mb-40 wow fadeIn ingredients">
+                  <div className="bg-lighter p-5">
+                    <h4 className="mb-20">Ingredients</h4>
+                    <EditableParagraph
+                      content={content["ingredients-content"]}
+                      handleSave={this.onSave("ingredients-content")}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </Section>
+
         </Layout>
       </div>
     );

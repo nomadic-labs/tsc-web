@@ -137,27 +137,39 @@ p {
   font-size: 14px;
 }
 
-.btn-primary {
+.btn.btn-primary:not(:disabled):not(.disabled) {
   background: $theme-primary;
 
   &:hover {
     background: $theme-secondary;
   }
+
+  &:active {
+    background: $theme-highlight;
+  }
 }
 
-.btn-secondary {
+.btn.btn-secondary:not(:disabled):not(.disabled) {
   background: $theme-secondary;
 
   &:hover {
     background: $theme-highlight;
   }
+
+  &:active {
+    background: $theme-highlight;
+  }
 }
 
-.btn-highlight {
+.btn.btn-highlight:not(:disabled):not(.disabled) {
   background: $theme-highlight;
 
   &:hover {
     background: $red;
+  }
+
+  &:active {
+    background: $theme-secondary;
   }
 }
 

@@ -99,6 +99,7 @@ class DefaultLayout extends React.Component {
             </div>
           </div>
         </EditablesContext.Provider>
+        <CreatePageModal />
       </div>
     )
   }

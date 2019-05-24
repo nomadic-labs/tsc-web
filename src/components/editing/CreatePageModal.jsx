@@ -17,9 +17,8 @@ import Input from "@material-ui/core/Input";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Chip from '@material-ui/core/Chip';
 
-import { PAGE_TYPES, MENU_CATEGORIES } from "../../utils/constants";
+import { PAGE_TYPES } from "../../utils/constants";
 
 import defaultContentJSON from "../../fixtures/pageContent.json";
 
@@ -44,9 +43,7 @@ const mapDispatchToProps = dispatch => {
 
 const emptyPage = {
     title: "",
-    category: "",
     order: "",
-    topics: [],
     type: PAGE_TYPES[0].value,
   }
 
@@ -56,8 +53,6 @@ class CreatePageModalComponent extends React.Component {
     this.state = {
       page: {
         ...this.props.page,
-        topics: this.props.page.topics || [],
-        category: this.props.page.category || "",
         order: this.props.order || 0,
       }
     };
@@ -73,8 +68,6 @@ class CreatePageModalComponent extends React.Component {
     if (prevProps.newPage != this.props.newPage) {
       this.setState({ page: this.props.newPage ? emptyPage : {
         ...this.props.page,
-        topics: this.props.page.topics || [],
-        category: this.props.page.category || "",
         order: this.props.order || "",
       } })
     }
@@ -96,9 +89,7 @@ class CreatePageModalComponent extends React.Component {
     })
     let pageData = {
       title: this.state.page.title,
-      category: this.state.page.category,
       order: this.state.page.order,
-      topics: this.state.page.topics,
     };
 
     if (this.props.newPage) {
@@ -157,26 +148,6 @@ class CreatePageModalComponent extends React.Component {
           </FormControl>
 
           <FormControl fullWidth margin="normal">
-            <InputLabel htmlFor="menu-group">Select category (optional)</InputLabel>
-            <Select
-              value={this.state.page.category}
-              onChange={selected =>
-                this.updatePage("category", selected.target.value)
-              }
-              inputProps={{
-                name: "menu-group",
-                id: "menu-group"
-              }}
-            >
-              {MENU_CATEGORIES.map(category => (
-                <MenuItem key={category.label} value={category.value}>
-                  {category.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-
-          <FormControl fullWidth margin="normal">
             <TextField
               name="page_order"
               className="form-control"
@@ -187,32 +158,6 @@ class CreatePageModalComponent extends React.Component {
                 this.updatePage("order", e.currentTarget.value)
               }
             />
-          </FormControl>
-
-          <FormControl fullWidth margin="normal">
-            <InputLabel htmlFor="select-multiple-tag">Tags (optional)</InputLabel>
-            <Select
-              multiple
-              value={this.state.page.topics}
-              onChange={selected =>
-                this.updatePage("topics", selected.target.value)
-              }
-              input={<Input id="select-multiple-tag" />}
-              renderValue={selected => (
-                <div>
-                  {selected.map(topic => {
-                    const label = this.props.topics.find(t => t.id === topic)
-                    return <Chip key={topic} label={label.label} className="mx-1" />
-                  })}
-                </div>
-              )}
-            >
-              {this.props.topics.map(topic => (
-                <MenuItem key={topic.id} value={topic.id}>
-                  {topic.label}
-                </MenuItem>
-              ))}
-            </Select>
           </FormControl>
 
         </DialogContent>
@@ -230,32 +175,11 @@ class CreatePageModalComponent extends React.Component {
   }
 }
 
-const CreatePageModalContainer = props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allPages {
-          edges {
-            node {
-              id
-              title
-              slug
-              order
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <CreatePageModalComponent {...props} />
-    )}
-  />
-);
 
 CreatePageModalComponent.defaultProps = {
   page: emptyPage
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  CreatePageModalContainer
+  CreatePageModalComponent
 );

@@ -115,7 +115,7 @@ class HomePage extends React.Component {
             <Container>
               <div className="row">
                 <div className="col-xl-5 col-lg-6">
-                  <div className="bounce-animate mb-30">
+                  <div className="mb-30 wow fadeIn">
                     <EditableImageUpload
                       content={content["intro-image"]}
                       onSave={this.onSave("intro-image")}
@@ -123,7 +123,7 @@ class HomePage extends React.Component {
                     />
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-6">
+                <div className="col-xl-7 col-lg-6">
                   <div className="mb-30">
                     <div className="section-title">
                       <h2 className="mb-20">
@@ -143,8 +143,8 @@ class HomePage extends React.Component {
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
               <div className="row">
-                <div className="col-xl-5 col-lg-5">
-                  <div className="team-content mb-30">
+                <div className="col-xl-7 col-lg-6">
+                  <div className="mb-30">
                     <div className="section-title mb-65">
                       <h2 className="mb-20">
                         <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
@@ -154,57 +154,14 @@ class HomePage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-7 col-lg-7">
-                    <div className="row">
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-1"]}
-                                      onSave={this.onSave("team-image-1")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-2"]}
-                                      onSave={this.onSave("team-image-2")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-3"]}
-                                      onSave={this.onSave("team-image-3")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6">
-                            <div className="team-wrapper mb-30">
-                                <div className="team-img">
-                                    <EditableImageUpload
-                                      content={content["team-image-4"]}
-                                      onSave={this.onSave("team-image-4")}
-                                      uploadImage={uploadImage}
-                                      showCaption={true}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="col-xl-5 col-lg-6">
+                  <div className="mb-30 wow fadeIn">
+                    <EditableImageUpload
+                      content={content["team-image"]}
+                      onSave={this.onSave("team-image")}
+                      uploadImage={uploadImage}
+                    />
+                  </div>
                 </div>
               </div>
             </Container>
@@ -228,14 +185,14 @@ class HomePage extends React.Component {
                   </div>
                 </div>
                 <div className="col-xl-7 col-lg-7 pos-relative">
-                  <div className="mb-30 callout-bg">
+                  <div className="mb-30 callout-bg wow fadeIn">
                     <EditableImageUpload
                       content={content["how-we-work-image"]}
                       onSave={this.onSave("how-we-work-image")}
                       uploadImage={uploadImage}
                     />
                   </div>
-                  <div className="callout p-4 bg-secondary text-white">
+                  <div className="callout p-4 bg-secondary text-white wow fadeIn">
                     <EditableText content={content["how-we-work-callout"]} handleSave={this.onSave("how-we-work-callout")} />
                   </div>
                 </div>
