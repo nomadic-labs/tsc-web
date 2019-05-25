@@ -29,8 +29,8 @@ export const DEFAULT_COMPONENT_CONTENT = {
     "cafe-image": { "imageSrc": "https://www.nomadiclabs.ca/img/logo-03.png", "caption": "" },
   },
   "board-members": {
-    "board-member-image": { "imageSrc": "https://www.nomadiclabs.ca/img/logo-03.png", "caption": "" },
+    "board-member-bio": { "text": "Short bio" },
     "board-member-name": { "text": "Name" },
-    "board-member-title": { "text": "Title, Organization" }
+    "board-member-title": { "text": "Board Position" }
   },
 }

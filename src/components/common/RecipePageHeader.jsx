@@ -4,7 +4,7 @@ import { uploadImage } from "../../firebase/operations";
 
 const defaultHeader = "https://firebasestorage.googleapis.com/v0/b/tru-web.appspot.com/o/images%2Fbg-botanical.png?alt=media&token=cce3440c-c686-41e8-a957-59dbaed77e04";
 
-const PageHeader = ({ onSave, content, title, headerImage, onUpdateTitle, onUpdateHeaderImage }) => {
+const RecipePageHeader = ({ onSave, content, title, headerImage, onUpdateTitle, onUpdateHeaderImage }) => {
   return (
     <div className="recipe-page-header">
       <EditableBackgroundImage
@@ -33,7 +33,7 @@ const PageHeader = ({ onSave, content, title, headerImage, onUpdateTitle, onUpda
 };
 
 
-PageHeader.defaultProps = {
+RecipePageHeader.defaultProps = {
   content: {
     "header-subtitle": {
       "text": ""
@@ -44,4 +44,4 @@ PageHeader.defaultProps = {
   }
 }
 
-export default PageHeader
+export default RecipePageHeader

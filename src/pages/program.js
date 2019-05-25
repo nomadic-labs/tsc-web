@@ -107,7 +107,6 @@ class ProgramPage extends React.Component {
             title={pageData.title}
             onSave={this.onSave}
             content={ content }
-            headerImage={pageData.header_image}
             onUpdateHeaderImage={this.onUpdateHeaderImage}
             onUpdateTitle={this.onUpdateTitle}
           />
@@ -152,8 +151,8 @@ class ProgramPage extends React.Component {
                 </div>
               </div>
 
-              <div className="row align-items-center">
-                <div className="col-lg-6 col-xl-7">
+              <div className="row align-items-center reverse-order-mobile">
+                <div className="col-lg-6 col-xl-7 order-1">
                   <div className="mb-30">
                     <div className="section-title">
                       <span className="mb-20 label">
@@ -165,7 +164,7 @@ class ProgramPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-xl-5">
+                <div className="col-lg-6 col-xl-5 order-2">
                   <div className="mb-30">
                     <EditableImageUpload
                       classes="rounded-circle"

@@ -109,7 +109,6 @@ class CafePage extends React.Component {
             title={pageData.title}
             onSave={this.onSave}
             content={ content }
-            headerImage={pageData.header_image}
             onUpdateHeaderImage={this.onUpdateHeaderImage}
             onUpdateTitle={this.onUpdateTitle}
           />

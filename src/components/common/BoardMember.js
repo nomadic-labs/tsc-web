@@ -32,27 +32,26 @@ class BoardMemberEditor extends React.Component {
     const { content } = this.state;
 
     return(
-      <div className="mb-30 col-12 col-sm-6 col-md-3">
-        <div className="team-wrapper">
-          <ImageUploadEditor
-            content={content["board-member-image"]}
-            handleEditorChange={this.handleEditorChange("board-member-image")}
-            uploadImage={uploadImage}
-          />
+        <div className="board-member">
           <h4>
             <PlainTextEditor
               content={content["board-member-name"]}
               handleEditorChange={this.handleEditorChange("board-member-name")}
             />
           </h4>
-          <span>
+          <div className="label">
             <PlainTextEditor
               content={content["board-member-title"]}
               handleEditorChange={this.handleEditorChange("board-member-title")}
             />
-          </span>
+          </div>
+          <div className="bio">
+            <PlainTextEditor
+              content={content["board-member-bio"]}
+              handleEditorChange={this.handleEditorChange("board-member-bio")}
+            />
+          </div>
         </div>
-      </div>
     )
   }
 }
@@ -66,22 +65,20 @@ const BoardMember = props => {
   }
 
   return (
-    <Editable
-      Editor={BoardMemberEditor}
-      handleSave={handleSave}
-      content={content}
-      {...props}
-    >
-      <div className="team-wrapper mb-30 col-12 col-sm-6 col-md-3">
-        <div className="team-img">
-          <img src={content["board-member-image"]["imageSrc"]} alt={content["board-member-image"]["caption"]} />
-          <div className="team-text">
-            <h4>{content["board-member-name"]["text"]}</h4>
-            <span>{content["board-member-title"]["text"]}</span>
-          </div>
+    <div className="mb-30 col-12 col-sm-6 col-md-4">
+      <Editable
+        Editor={BoardMemberEditor}
+        handleSave={handleSave}
+        content={content}
+        {...props}
+      >
+        <div className="board-member">
+          <h4>{content["board-member-name"]["text"]}</h4>
+          <div className="label">{content["board-member-title"]["text"]}</div>
+          <div className="bio">{content["board-member-bio"] ? content["board-member-bio"]["text"] : "Short bio"}</div>
         </div>
-      </div>
-    </Editable>
+      </Editable>
+    </div>
   );
 };
 
