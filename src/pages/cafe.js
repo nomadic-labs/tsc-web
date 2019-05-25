@@ -125,7 +125,7 @@ class CafePage extends React.Component {
               </div>
 
               <div className="row">
-                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                <div className="sample-menu-item-wrapper wow fadeIn mb-30 col-12 col-md-6">
                   <div className="row">
                     <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
@@ -147,7 +147,7 @@ class CafePage extends React.Component {
                   </div>
                 </div>
 
-                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                <div className="sample-menu-item-wrapper wow fadeIn mb-30 col-12 col-md-6">
                   <div className="row">
                     <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
@@ -169,7 +169,7 @@ class CafePage extends React.Component {
                   </div>
                 </div>
 
-                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                <div className="sample-menu-item-wrapper wow fadeIn mb-30 col-12 col-md-6">
                   <div className="row">
                     <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload
@@ -191,7 +191,7 @@ class CafePage extends React.Component {
                   </div>
                 </div>
 
-                <div className="sample-menu-item-wrapper mb-30 col-12 col-md-6">
+                <div className="sample-menu-item-wrapper wow fadeIn mb-30 col-12 col-md-6">
                   <div className="row">
                     <div className="col-12 col-sm-6 mb-20">
                       <EditableImageUpload

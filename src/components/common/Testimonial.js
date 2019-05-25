@@ -33,7 +33,7 @@ class TestimonialEditor extends React.Component {
 
     return(
       <div className="row justify-content-center">
-        <div className="testimonial-wrapper text-center col-12 col-md-8 card p-5">
+        <div className="testimonial-wrapper text-center col-12 col-md-8 card p-5 wow fadeIn">
           <div className="testimonial-icon">
             <i className="fas fa-quote-right"></i>
           </div>

@@ -4292,36 +4292,6 @@ footer .footer-area {
 	}
 }
 
-.page-header {
-	position: relative;
-
-	.image-shape {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-image: url("../images/header-bg2.svg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-	}
-
-	.header-bg {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-image: url("../images/header-bg.svg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-	}
-}
-
 .header-deco {
 	.motif {
 		display: inline-block;
