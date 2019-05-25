@@ -226,7 +226,7 @@ label {
 
 /* scrollUp */
 #scrollUp {
-	background: $theme-secondary;
+	background: $theme-highlight;
 	height: 35px;
 	width: 35px;
 	right: 50px;
@@ -240,7 +240,7 @@ label {
 	z-index: 200;
 }
 #scrollUp:hover {
-	background: $theme-highlight;
+	background: $theme-secondary;
 }
 /* 2. header */
 
@@ -733,7 +733,7 @@ label {
 }
 .section-title span.label {
 	font-size: 18px;
-	color: $theme-highlight;
+	color: $theme-secondary;
 	font-weight: 600;
 	margin-bottom: 22px;
 	display: inline-block;
@@ -3650,7 +3650,7 @@ footer .footer-area {
 	position: relative;
 
 	.icon-bg {
-		background: $theme-secondary;
+		background: $theme-highlight;
     height: 30px;
     width: 30px;
     color: $white;
