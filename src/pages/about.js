@@ -116,8 +116,8 @@ class AboutPage extends React.Component {
             <div className="background-circle d-none d-lg-block" />
             <Container>
 
-              <div className="row align-items-center">
-                <div className="col-lg-6 col-xl-5">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-lg-5 col-xl-4">
                   <div className="mb-30">
                     <EditableImageUpload
                       classes="rounded-circle"
@@ -141,7 +141,7 @@ class AboutPage extends React.Component {
                 </div>
               </div>
 
-              <div className="row align-items-center reverse-order-mobile">
+              <div className="row align-items-center justify-content-center reverse-order-mobile">
                 <div className="col-lg-6 col-xl-7 order-1">
                   <div className="mb-30">
                     <div className="section-title">
@@ -154,7 +154,7 @@ class AboutPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-xl-5 order-2">
+                <div className="col-lg-5 col-xl-4 order-2">
                   <div className="mb-30">
                     <EditableImageUpload
                       classes="rounded-circle"
@@ -166,39 +166,35 @@ class AboutPage extends React.Component {
                 </div>
               </div>
 
-            </Container>
-          </Section>
-
-          <Section className="wow fadeIn pt-80 pb-80 pos-relative bg-lighter">
-            <Container>
-              <div className="row">
-                <div className="col-12 col-lg-6">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-lg-5 col-xl-4">
                   <div className="mb-30">
                     <EditableImageUpload
+                      classes="rounded-circle"
                       content={content["mandate-image"]}
                       onSave={this.onSave("mandate-image")}
                       uploadImage={uploadImage}
                     />
                   </div>
                 </div>
-                <div className="col-12 col-lg-6">
+                <div className="col-lg-6 col-xl-7">
                   <div className="mb-30">
                     <div className="section-title">
-                      <h2 className="mb-20">
-                        <EditableText content={content["mandate-title"]} handleSave={this.onSave("mandate-title")} />
-                      </h2>
+                      <span className="mb-20 label">
+                        <EditableText content={content["mandate-headline"]} handleSave={this.onSave("mandate-headline")} />
+                      </span>
                     </div>
-                    <div className="mb-30">
+                    <div className="mb-30 lead-text">
                       <EditableParagraph content={content["mandate-description"]} handleSave={this.onSave("mandate-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["mandate-more-btn"]} handleSave={this.onSave("mandate-more-btn")} />
                     </div>
                   </div>
                 </div>
               </div>
+
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80">
+          <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
               <div className="section-title mb-40 text-center">
                 <h2 className="mb-20">
@@ -220,7 +216,7 @@ class AboutPage extends React.Component {
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
+          <Section className="wow fadeIn pt-80 pb-80">
             <Container>
               <div className="section-title mb-30 text-center">
                 <h2 className="mb-20">

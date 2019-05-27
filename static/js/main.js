@@ -1,18 +1,6 @@
 $(document).ready(function() {
 "use strict";
 
-	// sticky
-	var wind = $(window);
-	var sticky = $('#sticky-header');
-	wind.on('scroll', function () {
-		var scroll = wind.scrollTop();
-		if (scroll < 100) {
-			sticky.removeClass('sticky');
-		} else {
-			sticky.addClass('sticky');
-		}
-	});
-
 // data - background
 $("[data-background]").each(function () {
 	$(this).css("background-image", "url(" + $(this).attr("data-background") + ")")

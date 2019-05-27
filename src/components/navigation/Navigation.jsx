@@ -12,13 +12,30 @@ const styles = {
   }
 }
 
+const isClient = typeof window !== 'undefined';
+
 
 class Navigation extends React.Component {
+  state = { sticky: false }
+
+  componentDidMount() {
+    if (isClient) {
+      window.addEventListener('scroll', this.setStickyHeader);
+    }
+  }
+
+  componentWillUnmount() {
+    if (isClient) window.removeEventListener('scroll', this.setStickyHeader);
+  }
+
+  setStickyHeader = () => {
+    this.setState({ sticky: (window.scrollY > 100) });
+  }
 
   render() {
     return (
       <header>
-        <div id="sticky-header" className="header-transparent d-none d-lg-block">
+        <div id="sticky-header" className={`header-transparent d-none d-lg-block ${this.state.sticky ? 'sticky' : ''}`}>
             <div className="container">
                 <div className="row justify-content-space-between">
                     <div className="col-xl-5 col-lg-5">
@@ -52,7 +69,7 @@ class Navigation extends React.Component {
             </div>
         </div>
 
-        <nav className="navbar navbar-expand-lg navbar-dark d-flex d-lg-none" id="sticky-header">
+        <nav id="sticky-header" className={`navbar navbar-expand-lg navbar-dark d-flex d-lg-none ${this.state.sticky ? 'sticky' : ''}`}>
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="Trinity Square Cafe" style={{ maxHeight: "40px" }} />
         </Link>
