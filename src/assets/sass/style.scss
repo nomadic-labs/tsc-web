@@ -250,6 +250,16 @@ label {
 	a {
 		color: $white;
 	}
+
+	&.sticky {
+		.header-logo {
+			padding: 8px 0;
+
+			img {
+				height: 40px;
+			}
+		}
+	}
 }
 
 .header-transparent {
@@ -333,14 +343,16 @@ label {
 	position: relative;
 }
 .header-logo {
+	transition: all 0.5s linear;
   align-items: center;
   display: flex;
-	padding: 8px 0;
+	padding: 15px 0;
 	font-family: $header-font;
 	font-weight: 700;
 
 	img {
-		height: 40px;
+		transition: all 0.3s ease-in-out;
+		height: 80px;
 		width: auto;
 	}
 }
@@ -495,7 +507,7 @@ label {
 	margin-left: 40px;
 }
 .main-menu nav > ul > li:first-child{margin-left:0;}
-.main-menu nav > ul > li > a {
+.main-menu nav > ul > li > a:not(.btn) {
 	display: block;
 	font-size: 14px;
 	font-weight: 600;
@@ -507,6 +519,11 @@ label {
 	text-transform: uppercase;
 	font-family: $header-font;
 }
+
+.main-menu nav > ul > li > a.btn {
+	padding: 10px 24px;
+}
+
 /*.main-menu nav > ul  > li:hover > a,.main-menu nav > ul  > li.active > a{color:#112433;}*/
 /* sub-menu */
 .main-menu nav > ul  > li .sub-menu {
@@ -2883,7 +2900,7 @@ ul.cat li a:hover {
 }
 .footer-link{}
 .footer-link li {
-	padding-bottom: 17px;
+	padding-bottom: 8px;
 }
 .footer-link li:last-child{padding-bottom:0;}
 .footer-link li h5 {
@@ -2891,7 +2908,8 @@ ul.cat li a:hover {
 	color: #112433;
 	text-transform: uppercase;
 	font-weight: 600;
-	margin-bottom: 0;
+	margin-bottom: 4px;
+	margin-top: 4px;
 }
 .footer-link li h5 i {
 	font-size: 14px;
@@ -3031,6 +3049,10 @@ footer .footer-area {
 		margin-right: 8px;
 		font-size: 18px;
 	}
+}
+
+footer .footer-funder img {
+	max-height: 100px;
 }
 
 .subscribes-form  form {}

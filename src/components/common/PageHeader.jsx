@@ -1,7 +1,7 @@
 import React from "react";
 import { EditableText, EditableBackgroundImage } from "react-easy-editables";
 import { uploadImage } from "../../firebase/operations";
-import headerDeco from "../../assets/images/header-deco.svg";
+import headerDeco from "../../assets/images/tsc-bowl.svg";
 
 const defaultHeader = "https://firebasestorage.googleapis.com/v0/b/tru-web.appspot.com/o/images%2Fbg-botanical.png?alt=media&token=cce3440c-c686-41e8-a957-59dbaed77e04";
 

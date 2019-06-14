@@ -38,8 +38,8 @@ class Navigation extends React.Component {
         <div id="sticky-header" className={`header-transparent d-none d-lg-block ${this.state.sticky ? 'sticky' : ''}`}>
             <div className="container">
                 <div className="row justify-content-space-between">
-                    <div className="col-xl-5 col-lg-5">
-                        <div className="main-menu">
+                    <div className="col-xl-4 col-lg-4">
+                        <div className="main-menu justify-content-start align-items-center d-flex h-100">
                             <nav>
                                 <ul className="text-left">
                                     <li><Link to="/about">About Us</Link></li>
@@ -48,19 +48,19 @@ class Navigation extends React.Component {
                             </nav>
                         </div>
                     </div>
-                    <div className="col-xl-2 col-lg-2 d-flex align-items-stretch">
+                    <div className="col-xl-4 col-lg-4 d-flex align-items-stretch justify-content-center">
                         <div className="header-logo text-left text-lg-center">
                             <Link to="/">
                               <img src={logo} alt="Trinity Square Cafe" />
                             </Link>
                         </div>
                     </div>
-                    <div className="col-xl-5 col-lg-5">
-                        <div className="main-menu">
+                    <div className="col-xl-4 col-lg-4">
+                        <div className="main-menu justify-content-end align-items-center d-flex h-100">
                             <nav>
                                 <ul className="text-right">
-                                    <li><Link to="/cafe">Cafe</Link></li>
-                                    <li><Link to="/cafe/#location-hours">Location & Hours</Link></li>
+                                    <li><Link to="/cafe">Cafe Info</Link></li>
+                                    <li><a href="https://www.canadahelps.org/en/charities/trinity-square-cafe/" className="btn btn-secondary">Donate</a></li>
                                 </ul>
                             </nav>
                         </div>

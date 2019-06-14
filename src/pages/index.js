@@ -210,24 +210,6 @@ class HomePage extends React.Component {
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
-            <Container>
-              <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
-                <EditableText content={content["partners-funders-title"]} handleSave={this.onSave("partners-funders-title")} />
-              </h2>
-
-              <Carousel
-                collection={content["partner-logos"]}
-                SlideComponent={PartnerLogo}
-                onSave={this.onSave('partner-logos')}
-                onAddItem={this.onAddItem('partner-logos')}
-                onDeleteItem={this.onDeleteItem('partner-logos')}
-                options={{ slidesToShow: 4 }}
-                isEditingPage={this.props.isEditingPage}
-                defaultContent={DEFAULT_COMPONENT_CONTENT['partner-logos']}
-              />
-            </Container>
-          </Section>
         </main>
       </Layout>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import { push } from "gatsby";
+import { push, Link } from "gatsby";
 import firebase from "../../firebase/init";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button"
@@ -8,7 +8,6 @@ import {
   userLoggedIn,
   userLoggedOut,
   toggleRegistrationModal,
-  toggleNewPageModal,
   deploy,
   toggleEditing
 } from "../../redux/actions";
@@ -16,13 +15,14 @@ import {
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import RegistrationModal from "./RegistrationModal";
 
 const styles = {
   container: {
     position: "fixed",
     left: "10px",
     bottom: "10px",
-    zIndex: "1000",
+    zIndex: "999"
   },
   iconLabel: {
     display: "flex",
@@ -86,7 +86,7 @@ class AccountButton extends React.Component {
   };
 
   render() {
-    const { props, openMenu, closeMenu, logout } = this;
+    const { props, openMenu, closeMenu, logout, login } = this;
     const { anchorEl } = this.state;
 
     if (props.isLoggedIn) {
@@ -101,6 +101,7 @@ class AccountButton extends React.Component {
             onClick={openMenu}
             aria-owns={anchorEl ? "account-menu" : null}
             aria-haspopup="true"
+            color="secondary"
           >
             <span style={styles.iconLabel}>
               {accountName}
@@ -112,6 +113,8 @@ class AccountButton extends React.Component {
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={closeMenu}
+            getContentAnchorEl={null}
+            anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
           >
             {props.allowEditing && (
               <MenuItem
@@ -121,28 +124,6 @@ class AccountButton extends React.Component {
                 }}
               >
                 {toggleText}
-              </MenuItem>
-            )}
-
-            {props.allowEditing && (
-              <MenuItem
-                onClick={() => {
-                  props.onToggleNewPageModal();
-                  closeMenu();
-                }}
-              >
-                Page configuration
-              </MenuItem>
-            )}
-
-            {props.allowEditing && (
-              <MenuItem
-                onClick={() => {
-                  props.onToggleNewPageModal(true);
-                  closeMenu();
-                }}
-              >
-                Add new page
               </MenuItem>
             )}
 
@@ -198,9 +179,6 @@ const mapDispatchToProps = dispatch => {
     },
     onToggleRegistrationModal: () => {
       dispatch(toggleRegistrationModal());
-    },
-    onToggleNewPageModal: (create) => {
-      dispatch(toggleNewPageModal(create));
     },
     onToggleEditing: () => {
       dispatch(toggleEditing());

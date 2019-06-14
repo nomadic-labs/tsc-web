@@ -2,6 +2,7 @@ import React from "react";
 import Container from "./Container";
 import { Link } from "gatsby";
 import logo from "../../assets/images/tsc-logo.svg"
+import funderLogo from "../../assets/images/mohltc-logo.png"
 
 export default (props) => {
   return (
@@ -24,7 +25,7 @@ export default (props) => {
                             <div className="footer-title">
                                 <h4>Cafe Hours</h4>
                             </div>
-                            <ul className="fotter-menu">
+                            <ul className="footer-menu">
                                 <li>Monday: 11:00am - 2:30pm</li>
                                 <li>Tuesday: 11:00am - 2:30pm</li>
                                 <li>Wednesday: 11:00am - 2:30pm</li>
@@ -40,18 +41,18 @@ export default (props) => {
                             <div className="footer-title">
                                 <h4>Contact Info</h4>
                             </div>
-                            <ul className="fotter-link">
+                            <ul className="footer-link">
                                 <li>
                                     <h5><i className="far fa-paper-plane"></i> Location</h5>
-                                    <p>19 Trinity Square, Toronto, ON</p>
+                                    <a href="https://goo.gl/maps/vqLsNDntjzFXafYB9">19 Trinity Square, Toronto, ON</a>
                                 </li>
                                 <li>
                                     <h5><i className="far fa-envelope-open"></i> Email us</h5>
-                                    <p>hello@trinitysquarecafe.ca</p>
+                                    <a href="mailto:hello@trinitysquarecafe.ca">hello@trinitysquarecafe.ca</a>
                                 </li>
                                 <li>
                                     <h5><i className="fas fa-headphones"></i> Call Us</h5>
-                                    <p>(416) 598-2010</p>
+                                    <a href="tel:1-416-598-2010">(416) 598-2010</a>
                                 </li>
                             </ul>
                         </div>
@@ -61,17 +62,24 @@ export default (props) => {
                             <div className="footer-title">
                                 <h4>Support Us</h4>
                             </div>
-                            <ul className="fotter-link">
+                            <ul className="footer-link">
                                 <li>
-                                    <a href=""><i className="fab fa-paypal"></i> Make a donation</a>
+                                    <a href="https://www.canadahelps.org/en/charities/trinity-square-cafe/"><i className="fas fa-gift"></i> Make a donation</a>
                                 </li>
                                 <li>
-                                    <a href=""><i className="fab fa-instagram"></i> Follow us on Instagram</a>
+                                    <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i> Follow us on Instagram</a>
                                 </li>
                                 <li>
-                                    <a href=""><i className="fab fa-yelp"></i> Leave us a review</a>
+                                    <a href="https://www.yelp.ca/biz/trinity-square-cafe-toronto-2"><i className="fab fa-yelp"></i> Leave us a review</a>
                                 </li>
                             </ul>
+
+                            <div className="footer-funder mt-20">
+                                <p>Funded by:</p>
+                                <a href="http://www.health.gov.on.ca/en/">
+                                    <img className="img-fluid" src={funderLogo} alt="Ontario Provincial Ministry of Health and Long Term Care" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

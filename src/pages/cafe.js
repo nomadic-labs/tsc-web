@@ -228,6 +228,17 @@ class CafePage extends React.Component {
                     </h2>
                   </div>
                   { recipePages.slice(0,3).map(recipe => <RecipeSummary key={recipe.node.id} recipe={recipe.node} />)}
+                  <div className="recipe-summary wow fadeIn mb-20">
+                    <div className="card bg-highlight">
+                      <div className="card-body p-4 bg-primary">
+                        <div className="card-text">
+                          <h5 className="mb-0">
+                            <EditableText content={content["cookbook-pitch"]} handleSave={this.onSave("cookbook-pitch")} />
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="col-12 col-md-4">

@@ -15,6 +15,7 @@
     "browserslist": "^3.2.0",
     "caniuse-db": "^1.0.30000867",
     "firebase": "^4.9.1",
+    "firebase-admin": "^5.9.0",
     "firebase-tools": "^6.1.1",
     "gatsby": "^2.3.17",
     "gatsby-cli": "^1.1.58",
