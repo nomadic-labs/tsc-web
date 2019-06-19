@@ -2,7 +2,7 @@ import React from "react";
 import Container from "./Container";
 import { Link } from "gatsby";
 import logo from "../../assets/images/tsc-logo.svg"
-import funderLogo from "../../assets/images/mohltc-logo.png"
+import funderLogo from "../../assets/images/ON_POS_LOGO_RGB.png"
 
 export default (props) => {
   return (
@@ -79,6 +79,7 @@ export default (props) => {
                                 <a href="http://www.health.gov.on.ca/en/">
                                     <img className="img-fluid" src={funderLogo} alt="Ontario Provincial Ministry of Health and Long Term Care" />
                                 </a>
+                                <p className="mt-2"><strong>Ministry of Health and Long-Term Care</strong></p>
                             </div>
                         </div>
                     </div>
