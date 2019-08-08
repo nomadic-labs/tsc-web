@@ -44,6 +44,7 @@ const mapDispatchToProps = dispatch => {
 const emptyPage = {
     title: "",
     order: "",
+    category: "recipes",
     type: PAGE_TYPES[0].value,
   }
 
@@ -144,19 +145,6 @@ class CreatePageModalComponent extends React.Component {
               label={"Page title"}
               value={this.state.page.title}
               onChange={e => this.updatePage("title", e.currentTarget.value)}
-            />
-          </FormControl>
-
-          <FormControl fullWidth margin="normal">
-            <TextField
-              name="page_order"
-              className="form-control"
-              type="number"
-              label={"Page order (optional)"}
-              value={this.state.page.order}
-              onChange={e =>
-                this.updatePage("order", e.currentTarget.value)
-              }
             />
           </FormControl>
 
