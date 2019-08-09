@@ -91,6 +91,7 @@ class CreatePageModalComponent extends React.Component {
     let pageData = {
       title: this.state.page.title,
       order: this.state.page.order,
+      created_at: Date.now(),
     };
 
     if (this.props.newPage) {

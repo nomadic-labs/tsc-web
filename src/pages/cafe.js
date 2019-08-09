@@ -298,7 +298,7 @@ export const query = graphql`
         }
       }
       sort: {
-        fields: [id]
+        fields: [created_at]
         order: DESC
       }) {
       edges {
@@ -308,6 +308,7 @@ export const query = graphql`
           slug
           content
           order
+          created_at
           header_image {
             imageSrc
           }
