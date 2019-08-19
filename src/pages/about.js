@@ -196,6 +196,20 @@ class AboutPage extends React.Component {
 
           <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
             <Container>
+              <div className="section-title mb-30 text-center">
+                <h2 className="mb-20">
+                  <EditableText content={content["history-title"]} handleSave={this.onSave("history-title")} />
+                </h2>
+                <EditableParagraph content={content["history-description"]} handleSave={this.onSave("history-description")} />
+                <div className="mt-40">
+                  <EditableEmbeddedIframe content={content["history-timeline"]} handleSave={this.onSave("history-timeline")} />
+                </div>
+              </div>
+            </Container>
+          </Section>
+
+          <Section className="wow fadeIn pt-80 pb-80 ">
+            <Container>
               <div className="section-title mb-40 text-center">
                 <h2 className="mb-20">
                   <EditableText content={content["board-of-directors-title"]} handleSave={this.onSave("board-of-directors-title")} />
@@ -213,20 +227,6 @@ class AboutPage extends React.Component {
                 defaultContent={DEFAULT_COMPONENT_CONTENT['board-members']}
                 classes="row"
               />
-            </Container>
-          </Section>
-
-          <Section className="wow fadeIn pt-80 pb-80">
-            <Container>
-              <div className="section-title mb-30 text-center">
-                <h2 className="mb-20">
-                  <EditableText content={content["history-title"]} handleSave={this.onSave("history-title")} />
-                </h2>
-                <EditableParagraph content={content["history-description"]} handleSave={this.onSave("history-description")} />
-                <div className="mt-40">
-                  <EditableEmbeddedIframe content={content["history-timeline"]} handleSave={this.onSave("history-timeline")} />
-                </div>
-              </div>
             </Container>
           </Section>
 
