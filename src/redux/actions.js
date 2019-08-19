@@ -174,9 +174,8 @@ export function updatePageHeaderImage(content) {
 
 export function createPage(pageData, pageId) {
   return dispatch => {
-    console.log('pageId', pageId)
-    console.log('pageData', pageData)
     const db = firebase.database();
+
     db
       .ref(`pages/${pageId}/`)
       .update(pageData)
@@ -189,6 +188,24 @@ export function createPage(pageData, pageId) {
           )
         );
       });
+  };
+}
+
+
+export function deletePage() {
+  return dispatch => {
+    const db = firebase.database();
+    const state = getState();
+    const pageId = state.page.data.id;
+
+    db.ref(`pages/${pageId}`).remove(() => {
+      dispatch(
+        showNotification(
+          "This page has been deleted. Publish your changes to make them public.",
+          "success"
+        )
+      );
+    });
   };
 }
 
@@ -304,12 +321,6 @@ export function deploy() {
   return dispatch => {
     const url = `${process.env.GATSBY_DEPLOY_ENDPOINT}`;
     console.log(`Deploy command sent to ${url}`);
-    dispatch(
-      showNotification(
-        "The website is being published - this will take a few minutes. Time to go grab a coffee :)",
-        "success"
-      )
-    );
 
     firebase
       .auth()
@@ -326,7 +337,7 @@ export function deploy() {
         if (res.data.status === "ok") {
           dispatch(
             showNotification(
-              "The website has been published. Please refresh to see your changes.",
+              res.data.message,
               "success"
             )
           );
