@@ -1,11 +1,14 @@
 import React from "react";
 import { EditableText, EditableBackgroundImage } from "react-easy-editables";
 import { uploadImage } from "../../firebase/operations";
-import headerDeco from "../../assets/images/tsc-bowl.svg";
+import bowl from "../../assets/images/tsc-bowl.svg";
+import logo from "../../assets/images/tsc-logo.svg"
 
-const defaultHeader = "https://firebasestorage.googleapis.com/v0/b/tru-web.appspot.com/o/images%2Fbg-botanical.png?alt=media&token=cce3440c-c686-41e8-a957-59dbaed77e04";
 
-const PageHeader = ({ onSave, content, title, onUpdateTitle, onUpdateHeaderImage }) => {
+const PageHeader = ({ onSave, content, title, onUpdateTitle, onUpdateHeaderImage, headerImage }) => {
+  const headerDeco = headerImage == "logo" ? logo : bowl;
+  const headerDecoStyle = headerImage === "logo" ? { width: '300px' } : { width: "80px" };
+
   return (
       <div className="container pt-180">
         <div className="row">
@@ -20,7 +23,7 @@ const PageHeader = ({ onSave, content, title, onUpdateTitle, onUpdateHeaderImage
             </div>
             <div className="header-deco text-center">
               <div className="motif">
-                <img src={headerDeco} style={{ width: "80px" }} />
+                <img src={headerDeco} style={headerDecoStyle} />
               </div>
             </div>
           </div>

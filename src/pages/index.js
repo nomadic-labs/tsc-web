@@ -109,6 +109,7 @@ class HomePage extends React.Component {
             content={ content }
             onUpdateHeaderImage={this.onUpdateHeaderImage}
             onUpdateTitle={this.onUpdateTitle}
+            headerImage={"logo"}
           />
 
           <Section className="wow fadeIn pt-80 pb-80 pos-relative">

@@ -48,7 +48,7 @@ export default (props) => {
                                 </li>
                                 <li>
                                     <h5><i className="far fa-envelope-open"></i> Email us</h5>
-                                    <a href="mailto:hello@trinitysquarecafe.ca">hello@trinitysquarecafe.ca</a>
+                                    <a href="mailto:hello@trinitysquarecafe.ca">Trinitysqcafe@gmail.com</a>
                                 </li>
                                 <li>
                                     <h5><i className="fas fa-headphones"></i> Call Us</h5>
@@ -67,7 +67,7 @@ export default (props) => {
                                     <a href="https://www.canadahelps.org/en/charities/trinity-square-cafe/"><i className="fas fa-gift"></i> Make a donation</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i> Follow us on Instagram</a>
+                                    <a href="https://www.instagram.com/trinitysquarecafe/"><i className="fab fa-instagram"></i> Follow us on Instagram</a>
                                 </li>
                                 <li>
                                     <a href="https://www.yelp.ca/biz/trinity-square-cafe-toronto-2"><i className="fab fa-yelp"></i> Leave us a review</a>
