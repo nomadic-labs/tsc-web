@@ -48,7 +48,7 @@ export default (props) => {
                                 </li>
                                 <li>
                                     <h5><i className="far fa-envelope-open"></i> Email us</h5>
-                                    <a href="mailto:hello@trinitysquarecafe.ca">Trinitysqcafe@gmail.com</a>
+                                    <a href="mailto:trinitysqcafe@gmail.com">Trinitysqcafe@gmail.com</a>
                                 </li>
                                 <li>
                                     <h5><i className="fas fa-headphones"></i> Call Us</h5>
