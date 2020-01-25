@@ -194,7 +194,7 @@ class AboutPage extends React.Component {
             </Container>
           </Section>
 
-          <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
+          <Section className="wow fadeIn pt-80 pb-80">
             <Container>
               <div className="section-title mb-30 text-center">
                 <h2 className="mb-20">
@@ -207,6 +207,52 @@ class AboutPage extends React.Component {
               </div>
             </Container>
           </Section>
+
+          <Section className="wow fadeIn pt-80 pb-80 bg-lighter">
+            <Container>
+                <div className="mt-40">
+                  <div className="board-member row">
+                    <div className="col-lg-5 col-xl-4">
+                      <EditableImageUpload
+                        classes="image"
+                        content={content["director-image"]}
+                        onSave={this.onSave("director-image")}
+                        uploadImage={uploadImage}
+                        styles={{ image: { width: "auto", height: "100%" }}}
+                      />
+                    </div>
+                    <div className="col-lg-6 col-xl-7 mt-20">
+                      <h2>
+                        <EditableText
+                          content={content["director-name"]}
+                          handleSave={this.onSave("director-name")}
+                        />
+                      </h2>
+                      <div className="label">
+                        <EditableText
+                          content={content["director-title"]}
+                          handleSave={this.onSave("director-title")}
+                        />
+                      </div>
+                      <div className="bio">
+                        <EditableText
+                          content={content["director-bio"]}
+                          handleSave={this.onSave("director-bio")}
+                        />
+                      </div>
+
+                      <div className="contact">
+                        <EditableText
+                          content={content["director-contact"]}
+                          handleSave={this.onSave("director-contact")}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </Container>
+          </Section>
+
 
           <Section className="wow fadeIn pt-80 pb-80 ">
             <Container>

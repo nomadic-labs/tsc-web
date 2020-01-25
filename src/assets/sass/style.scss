@@ -1624,7 +1624,7 @@ label {
 .testimonial-wrapper{}
 .testimonial-text{}
 .testimonial-text p {
-	font-size: 2em;
+	font-size: 1.5em;
 	line-height: 1.5;
 	color: $black;
 	font-style: italic;
@@ -1632,7 +1632,7 @@ label {
 	margin-bottom: 29px;
 }
 .testimonial-text h3 {
-	font-size: 22px;
+	font-size: 1.5em;
 	font-weight: 600;
 	margin-bottom: 3px;
 }
@@ -4343,6 +4343,12 @@ footer .footer-funder img {
 }
 
 .board-member {
+	.image {
+		height: 300px;
+		display: flex;
+		justify-content: center;
+	}
+
 	.label {
 		font-size: 16px;
 		color: $theme-secondary;
@@ -4353,6 +4359,12 @@ footer .footer-funder img {
 	.bio {
 		font-size: 16px;
 		margin-bottom: 10px;
+	}
+
+	.contact {
+		font-size: 16px;
+		color: $theme-secondary;
+		font-weight: 600;
 	}
 }
 

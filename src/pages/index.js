@@ -114,7 +114,16 @@ class HomePage extends React.Component {
 
           <Section className="wow fadeIn pt-80 pb-80 pos-relative">
             <Container>
-              <div className="row justify-content-center">
+              <div className="row">
+                <div className="col-xl-5 col-lg-5 pos-relative">
+                  <div className="wow fadeIn">
+                    <EditableImageUpload
+                      content={content["intro-image"]}
+                      onSave={this.onSave("intro-image")}
+                      uploadImage={uploadImage}
+                    />
+                  </div>
+                </div>
                 <div className="col-xl-7 col-lg-7">
                   <div className="mb-30">
                     <EditableParagraph content={content["intro-description"]} handleSave={this.onSave("intro-description")} />

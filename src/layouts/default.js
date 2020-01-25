@@ -51,6 +51,7 @@ const styles = {
 const mapStateToProps = state => {
   return {
     isEditingPage: state.adminTools.isEditingPage,
+    pageData: state.page.data,
   };
 };
 
@@ -93,7 +94,7 @@ class DefaultLayout extends React.Component {
           <div className="page-container">
 
             <div className="page-wrapper">
-              <Navigation />
+              <Navigation currentPage={this.props.pageData} />
                 {this.props.children}
               <Footer />
             </div>

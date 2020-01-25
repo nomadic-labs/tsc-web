@@ -16,7 +16,7 @@ export default (props) => {
                                 <Link to="/"><img src={logo} alt="Trinity Square Cafe" className="img-fluid" /></Link>
                             </div>
                             <div className="footer-text">
-                                <p>We help people recovering from serious mental illness live full lives by building key skills in a respectful, supportive community.</p>
+                                <p>We help people living with mental health challenges live full lives by building key skills in a respectful, supportive community.</p>
                             </div>
                         </div>
                     </div>
@@ -26,11 +26,11 @@ export default (props) => {
                                 <h4>Cafe Hours</h4>
                             </div>
                             <ul className="footer-menu">
-                                <li>Monday: 11:00am - 2:30pm</li>
-                                <li>Tuesday: 11:00am - 2:30pm</li>
-                                <li>Wednesday: 11:00am - 2:30pm</li>
-                                <li>Thursday: 11:00am - 2:30pm</li>
-                                <li>Friday: 11:00am - 2:30pm</li>
+                                <li>Monday: 11:30am - 2:30pm</li>
+                                <li>Tuesday: 11:30am - 2:30pm</li>
+                                <li>Wednesday: 11:30am - 2:30pm</li>
+                                <li>Thursday: 11:30am - 2:30pm</li>
+                                <li>Friday: 11:30am - 2:30pm</li>
                                 <li>Saturday: Closed</li>
                                 <li>Sunday: Closed</li>
                             </ul>
@@ -70,7 +70,7 @@ export default (props) => {
                                     <a href="https://www.instagram.com/trinitysquarecafe/"><i className="fab fa-instagram"></i> Follow us on Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.yelp.ca/biz/trinity-square-cafe-toronto-2"><i className="fab fa-yelp"></i> Leave us a review</a>
+                                    <a href="https://www.yelp.ca/biz/trinity-square-cafe-toronto-2"><i className="far fa-comment"></i> Leave us a review</a>
                                 </li>
                             </ul>
 
@@ -79,7 +79,7 @@ export default (props) => {
                                 <a href="http://www.health.gov.on.ca/en/">
                                     <img className="img-fluid" src={funderLogo} alt="Ontario Provincial Ministry of Health and Long Term Care" />
                                 </a>
-                                <p className="mt-2"><strong>Ministry of Health and Long-Term Care</strong></p>
+                                <p className="mt-2"><strong>Ministry of Health</strong></p>
                             </div>
                         </div>
                     </div>

@@ -67,6 +67,10 @@ export default class InstagramFeed extends Component {
   render() {
     const latestPosts = this.state.items.slice(0,POST_LIMIT);
 
+    if (latestPosts.length === 0) {
+      return null
+    }
+
     if (this.state.errors.length > 0) {
       return(
         <div className="py-2">
@@ -77,6 +81,11 @@ export default class InstagramFeed extends Component {
 
     return (
       <div className="instagram-feed">
+        <div className="section-title">
+          <h2 className="mb-20">
+            <EditableText content={content["instagram-title"]} handleSave={this.onSave("instagram-title")} />
+          </h2>
+        </div>
         {
           latestPosts.map(post => {
             return(

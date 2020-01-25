@@ -26,7 +26,6 @@ import Layout from "../layouts/default.js";
 import Section from "../components/common/Section";
 import Container from "../components/common/Container";
 import Carousel from "../components/common/Carousel";
-import Testimonial from "../components/common/Testimonial";
 import PartnerLogo from "../components/common/PartnerLogo";
 import Affix from "../components/common/Affix";
 import EmbeddedIframe from "../components/common/EmbeddedIframe";
@@ -242,33 +241,9 @@ class CafePage extends React.Component {
                 </div>
 
                 <div className="col-12 col-md-4">
-                  <div className="section-title">
-                    <h2 className="mb-20">
-                      <EditableText content={content["instagram-title"]} handleSave={this.onSave("instagram-title")} />
-                    </h2>
-                  </div>
                   <InstagramFeed />
                 </div>
               </div>
-            </Container>
-          </Section>
-
-
-          <Section className="wow fadeIn pt-80 pb-80 pos-relative">
-            <Container>
-              <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
-                <EditableText content={content["testimonials-title"]} handleSave={this.onSave("testimonials-title")} />
-              </h2>
-              <Carousel
-                collection={content["testimonials"]}
-                SlideComponent={Testimonial}
-                onSave={this.onSave('testimonials')}
-                onAddItem={this.onAddItem('testimonials')}
-                onDeleteItem={this.onDeleteItem('testimonials')}
-                options={{ slidesToShow: 1 }}
-                isEditingPage={this.props.isEditingPage}
-                defaultContent={DEFAULT_COMPONENT_CONTENT['testimonials']}
-              />
             </Container>
           </Section>
 

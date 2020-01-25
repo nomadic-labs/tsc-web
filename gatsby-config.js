@@ -2,15 +2,15 @@ const firebaseConfig = require("./config/firebase-config.json")
 
 module.exports = {
   siteMetadata: {
-    title: `The Land and the Refinery`,
+    title: `Trinity Square Café`,
   },
   pathPrefix: `/`,
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "React CMS starter",
-        short_name: "React CMS starter",
+        name: "Trinity Square Café",
+        short_name: "Trinity Square Café",
         start_url: "/",
         background_color: "#000",
         theme_color: "#FCB239", // yellow

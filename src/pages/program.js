@@ -272,7 +272,6 @@ class ProgramPage extends React.Component {
                         <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
                       </h2>
                       <EditableParagraph content={content["team-description"]} handleSave={this.onSave("team-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["team-more-btn"]} handleSave={this.onSave("team-more-btn")} />
                     </div>
                   </div>
                 </div>
@@ -280,6 +279,24 @@ class ProgramPage extends React.Component {
               </div>
             </Container>
 
+          </Section>
+
+          <Section className="wow fadeIn pt-80 pb-80 pos-relative bg-lighter">
+            <Container>
+              <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
+                <EditableText content={content["testimonials-title"]} handleSave={this.onSave("testimonials-title")} />
+              </h2>
+              <Carousel
+                collection={content["testimonials"]}
+                SlideComponent={Testimonial}
+                onSave={this.onSave('testimonials')}
+                onAddItem={this.onAddItem('testimonials')}
+                onDeleteItem={this.onDeleteItem('testimonials')}
+                options={{ slidesToShow: 1 }}
+                isEditingPage={this.props.isEditingPage}
+                defaultContent={DEFAULT_COMPONENT_CONTENT['testimonials']}
+              />
+            </Container>
           </Section>
 
         </main>
