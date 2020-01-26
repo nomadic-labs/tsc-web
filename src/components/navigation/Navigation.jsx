@@ -42,7 +42,7 @@ class Navigation extends React.Component {
                         <div className="main-menu justify-content-start align-items-center d-flex h-100">
                             <nav>
                                 <ul className="text-left">
-                                    {(this.props.currentPage.id !== "home") && <li><Link to="/">← Home</Link></li>}
+                                    {(this.props.currentPage && this.props.currentPage.id !== "home") && <li><Link to="/">← Home</Link></li>}
                                     <li><Link to="/about">About Us</Link></li>
                                     <li><Link to="/program">Program & Referrals</Link></li>
                                 </ul>
