@@ -124,6 +124,7 @@ class AboutPage extends React.Component {
                       content={content["mission-image"]}
                       onSave={this.onSave("mission-image")}
                       uploadImage={uploadImage}
+                      styles={{ image: { height: "100%" }}}
                     />
                   </div>
                 </div>
@@ -161,6 +162,7 @@ class AboutPage extends React.Component {
                       content={content["vision-image"]}
                       onSave={this.onSave("vision-image")}
                       uploadImage={uploadImage}
+                      styles={{ image: { height: "100%" }}}
                     />
                   </div>
                 </div>
@@ -174,6 +176,7 @@ class AboutPage extends React.Component {
                       content={content["mandate-image"]}
                       onSave={this.onSave("mandate-image")}
                       uploadImage={uploadImage}
+                      styles={{ image: { height: "100%" }}}
                     />
                   </div>
                 </div>
