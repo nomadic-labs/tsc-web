@@ -36,19 +36,19 @@ class BoardMemberEditor extends React.Component {
           <h4>
             <PlainTextEditor
               content={content["board-member-name"]}
-              handleEditorChange={this.handleEditorChange("board-member-name")}
+              onContentChange={this.handleEditorChange("board-member-name")}
             />
           </h4>
           <div className="label">
             <PlainTextEditor
               content={content["board-member-title"]}
-              handleEditorChange={this.handleEditorChange("board-member-title")}
+              onContentChange={this.handleEditorChange("board-member-title")}
             />
           </div>
           <div className="bio">
             <PlainTextEditor
               content={content["board-member-bio"]}
-              handleEditorChange={this.handleEditorChange("board-member-bio")}
+              onContentChange={this.handleEditorChange("board-member-bio")}
             />
           </div>
         </div>

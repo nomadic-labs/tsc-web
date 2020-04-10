@@ -41,19 +41,19 @@ class TestimonialEditor extends React.Component {
             <p>
               <PlainTextEditor
                 content={content["testimonial-quote"]}
-                handleEditorChange={this.handleEditorChange("testimonial-quote")}
+                onContentChange={this.handleEditorChange("testimonial-quote")}
               />
             </p>
             <h3>
               <PlainTextEditor
                 content={content["testimonial-name"]}
-                handleEditorChange={this.handleEditorChange("testimonial-name")}
+                onContentChange={this.handleEditorChange("testimonial-name")}
               />
             </h3>
             <span>
               <PlainTextEditor
                 content={content["testimonial-title"]}
-                handleEditorChange={this.handleEditorChange("testimonial-title")}
+                onContentChange={this.handleEditorChange("testimonial-title")}
               />
             </span>
           </div>
