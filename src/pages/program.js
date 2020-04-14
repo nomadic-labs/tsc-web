@@ -251,16 +251,10 @@ class ProgramPage extends React.Component {
 
                 <div className="col-xl-5 col-lg-6">
                   <div className="mb-30 wow fadeIn">
-                    <Carousel
-                      classes="cafe-photos"
-                      collection={content["cafe-photos"]}
-                      SlideComponent={CafePhoto}
-                      onSave={this.onSave('cafe-photos')}
-                      onAddItem={this.onAddItem('cafe-photos')}
-                      onDeleteItem={this.onDeleteItem('cafe-photos')}
-                      options={{ slidesToShow: 1, dots: true, infinite: true, adaptiveHeight: true }}
-                      isEditingPage={this.props.isEditingPage}
-                      defaultContent={DEFAULT_COMPONENT_CONTENT['cafe-photos']}
+                    <EditableImageUpload
+                      content={content["cafe-image"]}
+                      onSave={this.onSave("cafe-image")}
+                      uploadImage={uploadImage}
                     />
                   </div>
                 </div>
