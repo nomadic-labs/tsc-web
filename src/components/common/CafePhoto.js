@@ -20,7 +20,7 @@ const CafePhoto = props => {
       <EditableImageUpload
         content={content["cafe-image"]}
         onSave={handleSave}
-        onDelete={props.onDelete}
+        handleDelete={props.onDelete}
         uploadImage={uploadImage}
         classes="img-fluid"
         styles={{ container: { height: "100%" }, image: { height: "100%", objectFit: "cover" }}}

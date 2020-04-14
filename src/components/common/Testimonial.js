@@ -11,87 +11,91 @@ import {
 
 import { uploadImage } from "../../firebase/operations"
 
-class TestimonialEditor extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { content: this.props.content };
-  }
+const TestimonialEditor = ({ content, onContentChange }) => {
 
-  handleEditorChange = field => item => {
-    this.setState({
-      content: {
-        ...this.state.content,
-        [field]: {
-          ...item
-        }
+  const handleEditorChange = field => item => {
+    onContentChange({
+      ...content,
+      [field]: {
+        ...item
       }
     });
+  }
+
+  return(
+    <div className="row justify-content-center">
+      <div className="testimonial-wrapper text-center col-12 col-md-10 col-xl-8 card p-5 wow fadeIn">
+        <div className="testimonial-icon">
+          <i className="fas fa-quote-right"></i>
+        </div>
+        <div className="testimonial-text">
+          <p>
+            <PlainTextEditor
+              content={content["testimonial-quote"]}
+              onContentChange={handleEditorChange("testimonial-quote")}
+            />
+          </p>
+          <h3>
+            <PlainTextEditor
+              content={content["testimonial-name"]}
+              onContentChange={handleEditorChange("testimonial-name")}
+            />
+          </h3>
+          <span>
+            <PlainTextEditor
+              content={content["testimonial-title"]}
+              onContentChange={handleEditorChange("testimonial-title")}
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+class Testimonial extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      content: this.props.content || {}
+    }
+  }
+
+  handleSave = newContent => {
+    this.setState({ content: newContent })
+    this.props.onSave(newContent)
+  }
+
+  handleContentChange = content => {
+    this.setState({ content })
   }
 
   render() {
     const { content } = this.state;
 
-    return(
-      <div className="row justify-content-center">
-        <div className="testimonial-wrapper text-center col-12 col-md-10 col-xl-8 card p-5 wow fadeIn">
-          <div className="testimonial-icon">
-            <i className="fas fa-quote-right"></i>
-          </div>
-          <div className="testimonial-text">
-            <p>
-              <PlainTextEditor
-                content={content["testimonial-quote"]}
-                onContentChange={this.handleEditorChange("testimonial-quote")}
-              />
-            </p>
-            <h3>
-              <PlainTextEditor
-                content={content["testimonial-name"]}
-                onContentChange={this.handleEditorChange("testimonial-name")}
-              />
-            </h3>
-            <span>
-              <PlainTextEditor
-                content={content["testimonial-title"]}
-                onContentChange={this.handleEditorChange("testimonial-title")}
-              />
-            </span>
+    return (
+      <Editable
+        Editor={TestimonialEditor}
+        handleSave={this.handleSave}
+        handleContentChange={this.handleContentChange}
+        content={content}
+        {...this.props}
+      >
+        <div className="row justify-content-center">
+          <div className="testimonial-wrapper text-center col-12 col-md-10 col-xl-8 card p-5">
+            <div className="testimonial-icon">
+              <i className="fas fa-quote-right"></i>
+            </div>
+            <div className="testimonial-text">
+              <p>{content["testimonial-quote"]["text"]}</p>
+              <h3>{content["testimonial-name"]["text"]}</h3>
+              <span>{content["testimonial-title"]["text"]}</span>
+            </div>
           </div>
         </div>
-      </div>
-    )
+      </Editable>
+    );
   }
-}
-
-const Testimonial = props => {
-
-  const content = props.content || {};
-
-  const handleSave = newContent => {
-    props.onSave(newContent)
-  }
-
-  return (
-    <Editable
-      Editor={TestimonialEditor}
-      handleSave={handleSave}
-      content={content}
-      {...props}
-    >
-      <div className="row justify-content-center">
-        <div className="testimonial-wrapper text-center col-12 col-md-10 col-xl-8 card p-5">
-          <div className="testimonial-icon">
-            <i className="fas fa-quote-right"></i>
-          </div>
-          <div className="testimonial-text">
-            <p>{content["testimonial-quote"]["text"]}</p>
-            <h3>{content["testimonial-name"]["text"]}</h3>
-            <span>{content["testimonial-title"]["text"]}</span>
-          </div>
-        </div>
-      </div>
-    </Editable>
-  );
 };
 
 export default Testimonial;

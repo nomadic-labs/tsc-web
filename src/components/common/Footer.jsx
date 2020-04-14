@@ -26,13 +26,15 @@ export default (props) => {
                                 <h4>Cafe Hours</h4>
                             </div>
                             <ul className="footer-menu">
-                                <li>Monday: 11:30am - 2:30pm</li>
+                                <li>Closed until further notice due to COVID-19</li>
+                                {/*
                                 <li>Tuesday: 11:30am - 2:30pm</li>
                                 <li>Wednesday: 11:30am - 2:30pm</li>
                                 <li>Thursday: 11:30am - 2:30pm</li>
                                 <li>Friday: 11:30am - 2:30pm</li>
                                 <li>Saturday: Closed</li>
                                 <li>Sunday: Closed</li>
+                                */}
                             </ul>
                         </div>
                     </div>
@@ -66,9 +68,11 @@ export default (props) => {
                                 <li>
                                     <a href="https://www.canadahelps.org/en/charities/trinity-square-cafe/"><i className="fas fa-gift"></i> Make a donation</a>
                                 </li>
+                                {/*
                                 <li>
                                     <a href="https://www.instagram.com/trinitysquarecafe/"><i className="fab fa-instagram"></i> Follow us on Instagram</a>
                                 </li>
+                                */}
                                 <li>
                                     <a href="https://www.yelp.ca/biz/trinity-square-cafe-toronto-2"><i className="far fa-comment"></i> Leave us a review</a>
                                 </li>
