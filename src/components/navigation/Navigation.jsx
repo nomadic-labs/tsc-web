@@ -52,7 +52,7 @@ class Navigation extends React.Component {
                     <div className="col-xl-4 col-lg-2 d-flex align-items-stretch justify-content-center">
                         <div className="header-logo text-left text-lg-center">
                             <Link to="/">
-                              <img src={logo} alt="Trinity Square Cafe" />
+                              <img src={logo} alt="Trinity Square Café" />
                             </Link>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ class Navigation extends React.Component {
                         <div className="main-menu justify-content-end align-items-center d-flex h-100">
                             <nav>
                                 <ul className="text-right">
-                                    <li><Link to="/cafe">Cafe Info</Link></li>
+                                    <li><Link to="/cafe">Café Info</Link></li>
                                     <li><a href="https://www.canadahelps.org/en/charities/trinity-square-cafe/" className="btn btn-secondary">Donate</a></li>
                                 </ul>
                             </nav>
@@ -72,7 +72,7 @@ class Navigation extends React.Component {
 
         <nav id="sticky-header" className={`navbar navbar-expand-lg navbar-dark d-flex d-lg-none ${this.state.sticky ? 'sticky' : ''}`}>
         <Link to="/" className="navbar-brand">
-          <img src={logo} alt="Trinity Square Cafe" style={{ maxHeight: "40px" }} />
+          <img src={logo} alt="Trinity Square Café" style={{ maxHeight: "40px" }} />
         </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -81,7 +81,7 @@ class Navigation extends React.Component {
             <div className="navbar-nav">
               <Link className="nav-item nav-link" to="/about">About Us</Link>
               <Link className="nav-item nav-link" to="/program">Program & Referrals</Link>
-              <Link className="nav-item nav-link" to="/cafe">Cafe Info</Link>
+              <Link className="nav-item nav-link" to="/cafe">Café Info</Link>
               <a className="nav-item nav-link" href="https://www.canadahelps.org/en/charities/trinity-square-cafe/">Donate</a>
             </div>
           </div>

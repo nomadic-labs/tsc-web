@@ -13,7 +13,7 @@ export default (props) => {
                     <div className="col-xl-3 col-lg-3 col-md-6">
                         <div className="footer-wrapper mb-30">
                             <div className="footer-logo">
-                                <Link to="/"><img src={logo} alt="Trinity Square Cafe" className="img-fluid" /></Link>
+                                <Link to="/"><img src={logo} alt="Trinity Square Café" className="img-fluid" /></Link>
                             </div>
                             <div className="footer-text">
                                 <p>We help people living with mental health challenges live full lives by building key skills in a respectful, supportive community.</p>
@@ -23,7 +23,7 @@ export default (props) => {
                     <div className="col-xl-3 col-lg-3 col-md-6">
                         <div className="footer-wrapper pl-40 mb-30">
                             <div className="footer-title">
-                                <h4>Cafe Hours</h4>
+                                <h4>Café Hours</h4>
                             </div>
                             <ul className="footer-menu">
                                 <li>Closed until further notice due to COVID-19</li>
