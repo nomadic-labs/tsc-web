@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 
 import {
   PlainTextEditor,
-  RichTextEditor,
-  ImageUploadEditor,
-  LinkEditor,
+  TextAreaEditor,
   Editable
 } from 'react-easy-editables';
 
@@ -46,7 +44,7 @@ class BoardMemberEditor extends React.Component {
             />
           </div>
           <div className="bio">
-            <PlainTextEditor
+            <TextAreaEditor
               content={content["board-member-bio"]}
               onContentChange={this.handleEditorChange("board-member-bio")}
             />

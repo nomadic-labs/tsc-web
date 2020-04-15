@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 
 import {
   PlainTextEditor,
-  RichTextEditor,
-  ImageUploadEditor,
-  LinkEditor,
+  TextAreaEditor,
   Editable
 } from 'react-easy-editables';
 
@@ -30,7 +28,7 @@ const TestimonialEditor = ({ content, onContentChange }) => {
         </div>
         <div className="testimonial-text">
           <p>
-            <PlainTextEditor
+            <TextAreaEditor
               content={content["testimonial-quote"]}
               onContentChange={handleEditorChange("testimonial-quote")}
             />

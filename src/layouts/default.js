@@ -28,15 +28,6 @@ import favicon from '../assets/images/icon.png'
 
 import { closeMenu } from "../redux/actions";
 
-const customEditorTheme = {
-  ...theme,
-  editContainer: {
-    ...theme.editContainer,
-    padding: "18px 4px 4px 4px",
-  }
-}
-
-
 const styles = {
   container: {
     minHeight: '100vh',
@@ -90,7 +81,7 @@ class DefaultLayout extends React.Component {
         </Helmet>
         <Notification />
         <AccountButton />
-        <EditablesContext.Provider value={ { theme: customEditorTheme, showEditingControls: this.props.isEditingPage } }>
+        <EditablesContext.Provider value={ { theme: theme, showEditingControls: this.props.isEditingPage } }>
           <div className="page-container">
 
             <div className="page-wrapper">

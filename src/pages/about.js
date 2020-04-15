@@ -14,6 +14,7 @@ import {
 import {
   EditableText,
   EditableParagraph,
+  EditableTextArea,
   EditableBackgroundImage,
   EditableImageUpload,
   EditableLink,
@@ -238,7 +239,7 @@ class AboutPage extends React.Component {
                         />
                       </div>
                       <div className="bio">
-                        <EditableText
+                        <EditableTextArea
                           content={content["director-bio"]}
                           handleSave={this.onSave("director-bio")}
                         />
