@@ -38,6 +38,7 @@ class EditableCarousel extends React.Component {
       slidesToScroll: options.slidesToShow || 1,
       draggable: !isEditingPage,
       swipe: !isEditingPage,
+      adaptiveHeight: true,
       responsive: [
         {
           breakpoint: 768,

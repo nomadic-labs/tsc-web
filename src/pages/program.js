@@ -201,7 +201,7 @@ class ProgramPage extends React.Component {
               <div className="row">
                 <div className="col-12 col-lg-4">
 
-                  <div className="pricing-wrapper mb-50">
+                  <div className="pricing-wrapper">
                     <div className="our-services-text">
                       <h4 className="mb-20">
                         <span className="icon-bg"><i className="fas fa-check"></i></span>
@@ -215,7 +215,7 @@ class ProgramPage extends React.Component {
 
                 <div className="col-12 col-lg-4">
 
-                  <div className="pricing-wrapper mb-50">
+                  <div className="pricing-wrapper">
                     <div className="our-services-text">
                       <h4 className="mb-20">
                         <span className="icon-bg"><i className="fas fa-check"></i></span>
@@ -229,7 +229,7 @@ class ProgramPage extends React.Component {
 
                 <div className="col-12 col-lg-4">
 
-                  <div className="pricing-wrapper mb-50">
+                  <div className="pricing-wrapper">
                     <div className="our-services-text">
                       <h4 className="mb-20">
                         <span className="icon-bg"><i className="fas fa-check"></i></span>

@@ -1,6 +1,33 @@
 /* RESPONSIVE FOR TABLETS */
 
 @media (max-width: 992px) {
+  main {
+    .page-header {
+      padding-top: 10%;
+    }
+
+    .pb-80 {
+      padding-bottom: 40px;
+    }
+
+    .pt-80 {
+      padding-top: 40px;
+    }
+
+    .testimonial-text {
+      p {
+        font-size: 1.1em;
+      }
+    }
+
+    .pricing-wrapper {
+      margin-bottom: 40px;
+    }
+
+    .lead-text p {
+      font-size: 1.5em;
+    }
+  }
 }
 
 /* RESPONSIVE FOR MOBILE */
@@ -8,5 +35,15 @@
 @media (max-width: 768px) {
   .hide-on-mobile {
     display: none;
+  }
+
+  main {
+    .testimonial-wrapper {
+      padding: 1.5rem !important;
+    }
+
+    .pricing-wrapper {
+      padding: 40px 25px;
+    }
   }
 }

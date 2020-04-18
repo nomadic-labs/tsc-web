@@ -180,14 +180,12 @@ class HomePage extends React.Component {
                 </div>
 
                 <div className="col-xl-7 col-lg-6">
-                  <div className="mb-30">
-                    <div className="section-title mb-65">
-                      <h2 className="mb-20">
-                        <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
-                      </h2>
-                      <EditableParagraph content={content["team-description"]} handleSave={this.onSave("team-description")} />
-                      <EditableLink classes={"btn btn-primary mt-20"} content={content["team-more-btn"]} handleSave={this.onSave("team-more-btn")} />
-                    </div>
+                  <div className="section-title">
+                    <h2 className="mb-20">
+                      <EditableText content={content["team-title"]} handleSave={this.onSave("team-title")} />
+                    </h2>
+                    <EditableParagraph content={content["team-description"]} handleSave={this.onSave("team-description")} />
+                    <EditableLink classes={"btn btn-primary mt-20"} content={content["team-more-btn"]} handleSave={this.onSave("team-more-btn")} />
                   </div>
                 </div>
 
@@ -201,16 +199,20 @@ class HomePage extends React.Component {
               <h2 className="text-center mb-20" data-animation="fadeInUp" data-delay=".5s">
                 <EditableText content={content["testimonials-title"]} handleSave={this.onSave("testimonials-title")} />
               </h2>
-              <Carousel
-                collection={content["testimonials"]}
-                SlideComponent={Testimonial}
-                onSave={this.onSave('testimonials')}
-                onAddItem={this.onAddItem('testimonials')}
-                onDeleteItem={this.onDeleteItem('testimonials')}
-                options={{ slidesToShow: 1 }}
-                isEditingPage={this.props.isEditingPage}
-                defaultContent={DEFAULT_COMPONENT_CONTENT['testimonials']}
-              />
+              <div className="row justify-content-center">
+                <div className="col-lg-10 col-md-12">
+                  <Carousel
+                    collection={content["testimonials"]}
+                    SlideComponent={Testimonial}
+                    onSave={this.onSave('testimonials')}
+                    onAddItem={this.onAddItem('testimonials')}
+                    onDeleteItem={this.onDeleteItem('testimonials')}
+                    options={{ slidesToShow: 1 }}
+                    isEditingPage={this.props.isEditingPage}
+                    defaultContent={DEFAULT_COMPONENT_CONTENT['testimonials']}
+                  />
+                </div>
+              </div>
             </Container>
           </Section>
 

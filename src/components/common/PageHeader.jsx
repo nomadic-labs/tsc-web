@@ -10,7 +10,7 @@ const PageHeader = ({ onSave, content, title, onUpdateTitle, onUpdateHeaderImage
   const headerDecoStyle = headerImage === "logo" ? { width: '300px' } : { width: "80px" };
 
   return (
-      <div className="container pt-180">
+      <div className="container pt-180 page-header">
         <div className="row">
           <div className="col-xl-12">
             <div className="breadcrumb-text text-center mb-40">
