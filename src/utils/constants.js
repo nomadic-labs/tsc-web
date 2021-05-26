@@ -19,7 +19,7 @@ export const PAGE_TYPES = [
 export const DEFAULT_COMPONENT_CONTENT = {
   "testimonials": {
     "testimonial-quote": { "text": "Quote" },
-    "testimonial-name": { "text": "Firstname Lastname" },
+    "testimonial-name": { "text": "Name" },
     "testimonial-title": { "text": "Title" }
   },
   "partner-logos": {

@@ -18,7 +18,7 @@ import {
   EditableBackgroundImage,
   EditableImageUpload,
   EditableLink,
-  EditableEmbeddedIframe,
+  EditableResponsiveIframe,
 } from "react-easy-editables";
 
 import { uploadImage } from "../firebase/operations";
@@ -206,7 +206,7 @@ class AboutPage extends React.Component {
                 </h2>
                 <EditableParagraph content={content["history-description"]} handleSave={this.onSave("history-description")} />
                 <div className="mt-40">
-                  <EditableEmbeddedIframe content={content["history-timeline"]} handleSave={this.onSave("history-timeline")} />
+                  <EditableResponsiveIframe content={content["history-timeline"]} handleSave={this.onSave("history-timeline")} />
                 </div>
               </div>
             </Container>

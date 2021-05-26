@@ -157,6 +157,30 @@ export function deleteContentItem(sectionIndex, contentIndex) {
 }
 
 export function toggleEditing() {
+  return (dispatch, getState) => {
+    const db = firebase.database();
+    const pageId = getState().page?.data?.id;
+
+    if (!pageId) {
+      return dispatch(toggleEditingState())
+    }
+
+    db.ref(`pages/${pageId}`)
+      .once('value')
+      .then(snap => {
+        const page = { ...snap.val(), id: pageId }
+
+        console.log("Fetched page", page)
+        dispatch(loadPageData(page));
+        dispatch(toggleEditingState())
+      })
+      .catch(error => {
+        console.log("Error fetching pages", error)
+      })
+  };
+}
+
+export function toggleEditingState() {
   return { type: "TOGGLE_EDITING" };
 }
 

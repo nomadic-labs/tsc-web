@@ -54,7 +54,7 @@ export default (props) => {
                                 </li>
                                 <li>
                                     <h5><i className="fas fa-headphones"></i> Call Us</h5>
-                                    <a href="tel:1-416-598-2010">(416) 598-2010</a>
+                                    <a href="tel:1-416-598-2010">(647) 223-0975</a>
                                 </li>
                             </ul>
                         </div>

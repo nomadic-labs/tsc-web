@@ -9,64 +9,51 @@ import {
 
 import { uploadImage } from "../../firebase/operations"
 
-class BoardMemberEditor extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { content: this.props.content };
-  }
-
-  handleEditorChange = field => item => {
-    this.setState({
-      content: {
-        ...this.state.content,
-        [field]: {
-          ...item
-        }
+const BoardMemberEditor = ({ content, onContentChange}) => {
+  const handleEditorChange = field => item => {
+    console.log({field})
+    console.log({item})
+    onContentChange({
+      ...content,
+      [field]: {
+        ...item
       }
     });
   }
 
-  render() {
-    const { content } = this.state;
-
-    return(
-        <div className="board-member">
-          <h4>
-            <PlainTextEditor
-              content={content["board-member-name"]}
-              onContentChange={this.handleEditorChange("board-member-name")}
-            />
-          </h4>
-          <div className="label">
-            <PlainTextEditor
-              content={content["board-member-title"]}
-              onContentChange={this.handleEditorChange("board-member-title")}
-            />
-          </div>
-          <div className="bio">
-            <TextAreaEditor
-              content={content["board-member-bio"]}
-              onContentChange={this.handleEditorChange("board-member-bio")}
-            />
-          </div>
-        </div>
-    )
-  }
+  return(
+    <div className="board-member">
+      <h4>
+        <PlainTextEditor
+          content={content["board-member-name"]}
+          onContentChange={handleEditorChange("board-member-name")}
+        />
+      </h4>
+      <div className="label">
+        <PlainTextEditor
+          content={content["board-member-title"]}
+          onContentChange={handleEditorChange("board-member-title")}
+        />
+      </div>
+      <div className="bio">
+        <TextAreaEditor
+          content={content["board-member-bio"]}
+          onContentChange={handleEditorChange("board-member-bio")}
+        />
+      </div>
+    </div>
+  )
 }
 
 const BoardMember = props => {
 
   const content = props.content || {};
 
-  const handleSave = newContent => {
-    props.onSave(newContent)
-  }
-
   return (
     <div className="mb-30 col-12 col-sm-6 col-md-4">
       <Editable
         Editor={BoardMemberEditor}
-        handleSave={handleSave}
+        handleSave={props.onSave}
         content={content}
         {...props}
       >

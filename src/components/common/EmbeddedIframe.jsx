@@ -1,5 +1,5 @@
 import React from "react";
-import { EditableEmbeddedIframe } from "react-easy-editables";
+import { EditableResponsiveIframe } from "react-easy-editables";
 import Container from "./Container"
 
 
